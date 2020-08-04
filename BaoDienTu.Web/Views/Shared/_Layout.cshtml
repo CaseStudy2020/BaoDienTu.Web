@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Youth Magazine</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/lib/bootstrap/dist/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/slicknav.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/flaticon.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/progressbar_barfiller.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/gijgo.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/animate.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/animated-headline.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/magnific-popup.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/themify-icons.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/slick.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/nice-select.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="../lib/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start-->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header ">
+                <div class="header-top ">
+                    <div class="container-fluid">
+                        <div class="col-xl-12">
+                            <div class="row d-flex justify-content-lg-between align-items-center">
+                                <div class="header-info-left">
+                                    <li class="d-none d-lg-block">
+                                        <div class="form-box f-right ">
+                                            <input type="text" name="Search" placeholder="Search news">
+                                            <div class="search-icon">
+                                                <i class="fas fa-search"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="header-info-mid">
+                                    <!-- logo -->
+                                    <div class="logo">
+                                        <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo.png" alt="logo"></a>
+                                    </div>
+                                </div>
+                                <div class="header-info-right d-flex align-items-center">
+                                    <ul>
+                                        <li><a asp-controller="About" asp-action="Index">About</a></li>
+                                        <li><a asp-controller="Contact" asp-action="Index"><i class="fas fa-phone"></i></a></li>
+                                        <li><a asp-controller="Login" asp-action="Index"><i class="fas fa-user-circle"></i></a></li>
+                                        <li><a asp-controller="Login" asp-action="Register">Sign Up</a></li>
+                                    </ul>
+                                    <!-- Social -->
+                                    <div class="header-social">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-12">
+                                <div class="logo2">
+                                    <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo.png" alt=""></a>
+                                </div>
+                                <div class="logo3 d-block d-sm-none">
+                                    <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo-mobile.png" alt=""></a>
+                                </div>
+                                <div class="main-menu text-center d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            @*categories*@
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-area footer-padding">
+            <div class="header-area">
+                <div class="main-header ">
+                    <div class="header-top d-lg-block d-none">
+                        <div class="container">
+                            <div class="col-xl-12">
+                                <div class="row d-flex justify-content-between align-items-center">
+                                    <div class="header-info-left d-flex justify-content-center">
+                                        <div class="header-social">
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="header-info-mid">
+                                        <div class="logo">
+                                            <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="header-info-right d-flex align-items-center">
+                                        <ul>
+                                            <li><a asp-controller="About" asp-action="Index">About</a></li>
+                                            <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-bottom header-bottom2 ">
+                        <div class="container-fluid">
+                            @*<div class="row align-items-center">*@
+                            <div class="col-12">
+                                <div class="main-menu text-center">
+                                    <nav>
+                                        <ul class="categoriescus">
+                                            @*categories*@
+                                        </ul>
+                                    </nav>
+                                    <div class="container">
+                                        <div style=" width: 50%;text-align: left;float: left;">
+                                            <p>
+                                                <strong>Publication License No. 000/GP-BTTTT issued on 00.0.2020</strong><br />
+                                                © 2000-2020 Copyright of HVN team. Reproduction in any form without written permission is prohibited.
+                                                Developed by HVN Technologies, JSC.<br />
+                                                Add: 28 - Nguyen Tri Phuong str.<br />
+                                                Phone: 0789.999.999<br />
+                                                Mail:hvnteam@gmail.com
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div style=" width: 40%;text-align: right;float: right;">
+                                            <p>
+                                                Editor: <strong>Nguyen Van A</strong><br />
+                                                Deputy editor: <strong>Nguyen Van B</strong><br />
+                                                Deputy editor: <strong>Nguyen Van C</strong><br />
+                                                Deputy editor: <strong>Le Thi D</strong><br />
+                                                Member of Editorial Board - General Secretary of the editorial office: <strong>Hoang P</strong>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*</div>*@
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @*<div class="footer-bottom-area">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-9 col-lg-8">
+                                <div class="footer-copy-right text-center">
+                                    <p>
+                                        &copy;
+                                        <script>document.write(new Date().getFullYear());</script> All rights reserved by HVN team| Electronic Knowledge Magazine - Line Agency: team HVN
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>*@
+
+        <!-- Scroll Up -->
+        <div id="back-top">
+            <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+        </div>
+        <script src="~/lib/bootstrap/dist/js/modernizr-3.5.0.min.js"></script>
+        <script src="~/lib/jquery/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/popper.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/jquery.slicknav.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/owl.carousel.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/slick.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/wow.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/animated.headline.js"></script>
+        <script src="~/lib/bootstrap/dist/js/jquery.magnific-popup.js"></script>
+        <script src="~/lib/bootstrap/dist/js/gijgo.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/jquery.nice-select.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/jquery.sticky.js"></script>
+        <script src="~/lib/bootstrap/dist/js/jquery.barfiller.js"></script>
+        <script src="~/lib/bootstrap/dist/js/jquery.counterup.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/waypoints.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/jquery.countdown.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/hover-direction-snake.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/contact.js"></script>
+        <script src="~/lib/bootstrap/dist/js/jquery.form.js"></script>
+        <script src="~/lib/bootstrap/dist/js/jquery.validate.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/mail-script.js"></script>
+        <script src="~/lib/bootstrap/dist/js/jquery.ajaxchimp.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/plugins.js"></script>
+        <script src="~/lib/bootstrap/dist/js/main.js"></script>
+        @*<script src="~/js/home.js" asp-append-version="true"></script>*@
+        @RenderSection("Scripts", required: false)
+</body>
+</html>
