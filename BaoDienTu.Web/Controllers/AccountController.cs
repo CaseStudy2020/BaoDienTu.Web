@@ -6,12 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaoDienTu.Web.Controllers
 {
-    public class Login : Controller
+    public class AccountController : Controller
     {
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Login(string returnUrl)
         {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
+
         public IActionResult Register()
         {
             return View();

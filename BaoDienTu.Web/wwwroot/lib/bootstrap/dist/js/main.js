@@ -290,21 +290,21 @@ var testimonial = $('.h1-testimonial-active');
                 });
             }
         });
-        //$.ajax({
-        //    url: `/Home/GetsCategory`,
-        //    method: "GET",
-        //    dataType: "json",
-        //    success: function (data) {
-        //        $('.mobile_menu').empty();
-        //        $.each(data.categories, function (i, v) {
-        //            $('.mobile_menu').append(
-        //                `
-        //            <li><a href="category.html">${v.categoryName}</a></li>
-        //            `
-        //            );
-        //        });
-        //    }
-        //});
+        $.ajax({
+            url: `/Home/GetsCategory`,
+            method: "GET",
+            dataType: "json",
+            success: function (data) {
+                $('ul.slicknav_nav').empty();
+                $.each(data.categories, function (i, v) {
+                    $('ul.slicknav_nav').append(
+                        `
+                    <li><a href="category.html" role="menuitem" tabindex="0">${v.categoryName}</a></li>
+                    `
+                    );
+                });
+            }
+        });
 
         $.ajax({
             url: `/Home/GetTop10MostViewOfDay`,
@@ -317,7 +317,7 @@ var testimonial = $('.h1-testimonial-active');
                         `<div class="single-job-items mb-30">
                         <div class="job-items">
                             <div class="company-img">
-                                <a href="#"><img src="${v.thumbnail}" alt=""></a>
+                                <a href="#"><img src="${v.thumbnail}" style="width:264px;height:214px" alt=""></a>
                             </div>
                             <div class="job-tittle">
                                 <a href="post_details.html"><h4>${v.title}</h4></a>
