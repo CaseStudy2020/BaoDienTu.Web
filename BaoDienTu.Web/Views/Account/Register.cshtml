@@ -2,89 +2,91 @@
 @{
     ViewBag.Title = "Sign Up";
 }
-    <div class="page-notification">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
-                            <li class="breadcrumb-item"><a asp-controller="Login" asp-action="Register">Sign Up</a></li>
-                        </ol>
-                    </nav>
-                </div>
+<div class="page-notification">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item"><a asp-controller="Login" asp-action="Register">Sign Up</a></li>
+                    </ol>
+                </nav>
             </div>
         </div>
     </div>
-    <div class="register-form-area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-8">
-                    <div class="register-form text-center">
-                        <!-- Login Heading -->
-                        <form asp-controller="account" asp-action="register" method="post">
-                            <div class="register-heading">
-                                <span>Sign Up</span>
-                                <p>Create your account to get full access</p>
+</div>
+<div class="register-form-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8">
+                <div class="register-form text-center">
+                    <!-- Login Heading -->
+                    <form asp-controller="account" asp-action="register" method="post">
+                        <div class="register-heading">
+                            <span>Sign Up</span>
+                            <p>Create your account to get full access</p>
+                        </div>
+                        <!-- Single Input Fields -->
+                        <div class="input-box">
+                            <div class="single-input-fields">
+                                <label asp-for="FullName">Full name</label>
+                                <input type="text" asp-for="FullName" placeholder="Enter full name">
                             </div>
-                            <!-- Single Input Fields -->
-                            <div class="input-box">
-                                <div class="single-input-fields">
-                                    <label asp-for="FullName">Full name</label>
-                                    <input type="text" asp-for="FullName" placeholder="Enter full name">
-                                </div>
-                                <div class="single-input-fields">
-                                    <label>Gender</label>
+                            <div class="single-input-fields">
+                                @*<label>Gender</label>
                                     <div class="primary-radio">
                                         <input type="checkbox" id="primary-radio" checked>
                                         <label for="primary-radio"></label>
-                                    </div>
-                                    <div class="primary-radio">
-                                        <input type="checkbox" id="primary-radio" >
-                                        <label for="primary-radio"></label>
-                                    </div>
-                                    <div class="primary-radio">
-                                        <input type="checkbox" id="primary-radio" >
-                                        <label for="primary-radio"></label>
-                                    </div>
-                                </div>
-                                <div class="single-input-fields">
-                                    <label>Date Of Birth</label>
-                                    <input type="text" placeholder="Enter full name">
-                                </div>
-                                <div class="single-input-fields">
-                                    <label>Avatar</label>
-                                    <input type="text" placeholder="Enter full name">
-                                </div>
-                                <div class="single-input-fields">
-                                    <label>Phone Number</label>
-                                    <input type="text" placeholder="Enter full name">
-                                </div>
-                                <div class="single-input-fields">
-                                    <label>Address</label>
-                                    <input type="text" placeholder="Enter full name">
-                                </div>
-                                <div class="single-input-fields">
-                                    <label>Email Address</label>
-                                    <input type="email" placeholder="Enter email address">
-                                </div>
-                                <div class="single-input-fields">
-                                    <label>Password</label>
-                                    <input type="password" placeholder="Enter Password">
-                                </div>
-                                <div class="single-input-fields">
-                                    <label>Confirm Password</label>
-                                    <input type="password" placeholder="Confirm Password">
+                                    </div>*@
+                                <label asp-for="Gender">Gender:</label>
+
+                                <div class="text-left">
+                                    Male:
+                                    <input type="radio" style="height:auto; width:auto" asp-for="Gender" value="False" /> FeMale:
+                                    <input type="radio" style="height:auto; width:auto" asp-for="Gender" value="True" />
                                 </div>
                             </div>
-                            <!-- form Footer -->
-                            <div class="register-footer">
-                                <p> Already have an account? <a asp-controller="Account" asp-action="Login"> Login</a> here</p>
-                                <button class="submit-btn3" type="submit">Sign Up</button>
+                            <div class="single-input-fields">
+                                <label asp-for="DoB"></label>
+                                <input type="date" asp-for="DoB" >
                             </div>
-                        </form>
-                    </div>
+                            <div class="single-input-fields">
+                                <label asp-for="Avatar"></label>
+                                <input type="text" placeholder="Enter full name">
+                            </div>
+                            <div class="single-input-fields">
+                                <label asp-for="PhoneNumber"></label>
+                                <input asp-for="PhoneNumber" placeholder="Enter Phone Number">
+                            </div>
+                            <div class="single-input-fields">
+                                <label asp-for="Address">Address</label>
+                                <input asp-for="Address" placeholder="Enter Address">
+                            </div>
+                            <div class="single-input-fields">
+                                <label asp-for="Email"></label>
+                                <input asp-for="Email" placeholder="Enter email address">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="single-input-fields">
+                                <label asp-for="Password"></label>
+                                <input asp-for="Password" placeholder="Enter Password">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="single-input-fields">
+                                <label asp-for="ConfirmPassword"></label>
+                                <input asp-for="ConfirmPassword" placeholder="Confirm Password">
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- form Footer -->
+                        <div class="register-footer">
+                            <p> Already have an account? <a asp-controller="Account" asp-action="Login"> Login</a> here</p>
+                            <button class="submit-btn3" type="submit">Sign Up</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>

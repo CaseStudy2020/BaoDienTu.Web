@@ -62,7 +62,14 @@ namespace BaoDienTu.Web.Controllers
                 var registerRequest = new RegisterRequest()
                 {
                     Email = model.Email,
-                    Password = model.Password
+                    Password = model.Password,
+                    ConfirmPassword=model.ConfirmPassword,
+                    Address=model.Address,
+                    Avatar=model.Avatar,
+                    DoB=model.DoB,
+                    FullName=model.FullName,
+                    Gender=model.Gender,
+                    PhoneNumber=model.PhoneNumber
                 };
                 var result = new RegisterResult();
                 result = result = ApiHelper<RegisterResult>.HttpPostAsync(
