@@ -69,6 +69,20 @@ namespace BaoDienTu.Web.Controllers
             mostviewpost = ApiHelper<List<Top10MostViewOfDay>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetTop10MostViewOfDay");
             return Json(new { mostviewpost });
         }
+        [Route("/Home/CreatePost")]
+        public JsonResult Create([FromBody] CreatePost model)
+        {
+            var post = new CreatePostResult();
+            post = ApiHelper<CreatePostResult>.HttpGetAsync($"{Helper.ApiUrl}api/post/create");
+            return Json(new { post });
+        }
+        [Route("/Home/UpdatePost")]
+        public JsonResult Update([FromBody] UpdatePost model)
+        {
+            var updatePost = new UpdatePostResult();
+            updatePost = ApiHelper<UpdatePostResult>.HttpGetAsync($"{Helper.ApiUrl}api/post/update");
+            return Json(new { updatePost });
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

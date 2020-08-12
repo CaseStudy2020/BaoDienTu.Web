@@ -12,5 +12,9 @@ namespace BaoDienTu.Web.Controllers
         {
             return View();
         }
+        public IActionResult ProfileUser()
+        {
+            return View();
+        }
     }
 }

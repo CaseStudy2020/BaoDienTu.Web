@@ -8,4 +8,5 @@ home.init = function () {
 
 $(document).ready(function () {
     home.init();
+
 });
