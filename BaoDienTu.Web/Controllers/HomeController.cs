@@ -44,6 +44,14 @@ namespace BaoDienTu.Web.Controllers
             return Json(new { fastpost });
         }
 
+        [Route("/Home/GetsTop5LastestPost")]
+        public JsonResult GetsTop5LastestPost()
+        {
+            var lastestpost = new List<Top5LastestPost>();
+            lastestpost = ApiHelper<List<Top5LastestPost>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetsFastInfoPost");
+            return Json(new { lastestpost });
+        }
+
         [Route("/Home/Get/{id}")]
         public JsonResult Get(int id)
         {
