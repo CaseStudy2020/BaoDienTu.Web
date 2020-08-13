@@ -48,7 +48,7 @@ namespace BaoDienTu.Web.Controllers
         public JsonResult GetsTop5LastestPost()
         {
             var lastestpost = new List<Top5LastestPost>();
-            lastestpost = ApiHelper<List<Top5LastestPost>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetsFastInfoPost");
+            lastestpost = ApiHelper<List<Top5LastestPost>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetsTop5LastestPost");
             return Json(new { lastestpost });
         }
 
@@ -77,6 +77,7 @@ namespace BaoDienTu.Web.Controllers
             mostviewpost = ApiHelper<List<Top10MostViewOfDay>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetTop10MostViewOfDay");
             return Json(new { mostviewpost });
         }
+      
         [Route("/Home/CreatePost")]
         public JsonResult Create([FromBody] CreatePost model)
         {
