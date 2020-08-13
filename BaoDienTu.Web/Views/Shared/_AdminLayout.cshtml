@@ -63,7 +63,7 @@
                                 <li>
                                     <a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="index.html">Dashboard</a></li>
+                                        <li><a href="/Category/Index">Category</a></li>
                                         <li><a href="index2.html">Dashboard2</a></li>
                                         <li><a href="index3.html">Dashboard3</a></li>
                                     </ul>
@@ -202,7 +202,7 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                     <img src="~/images/images1.jpg" alt="">John Doe
-                                    
+
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="javascript:;"> Profile</a>
@@ -308,6 +308,8 @@
     <script src="~/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="~/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootbox.js/bootbox.js"></script>
+
     <!-- FastClick -->
     <script src="~/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
@@ -345,7 +347,7 @@
     <!-- Custom Theme Scripts -->
     <script src="~/build/js/custom.min.js"></script>
 
-
+    @RenderSection("Scripts", required: false)
 
 </body>
 </html>
