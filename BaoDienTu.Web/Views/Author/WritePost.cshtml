@@ -1,0 +1,64 @@
+﻿@model BaoDienTu.Web.ViewModel.CreatePostViewModel
+
+@{
+    ViewData["Title"] = "WritePost";
+}
+    <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<h1>WritePost</h1>
+
+<h4>CreatePostViewModel</h4>
+<hr />
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="thumbnail" class="control-label"></label>
+                <input asp-for="thumbnail" class="form-control" id="thumbnail"/>
+                <span asp-validation-for="thumbnail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="authorId" class="control-label"></label>
+                <input asp-for="authorId" class="form-control" id="authorId" />
+                <span asp-validation-for="authorId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="subCategoryId" class="control-label"></label>
+                <input asp-for="subCategoryId" class="form-control" id="subCategoryId"/>
+                <span asp-validation-for="subCategoryId" class="text-danger"></span>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="form-group">
+        <label asp-for="title" class="control-label"></label>
+        <input asp-for="title" class="form-control" id="title"/>
+        <span asp-validation-for="title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="content" class="control-label"></label>
+        <textarea name="content" id="content"></textarea>
+        <script>
+            CKEDITOR.replace('content');
+        </script>
+        <span asp-validation-for="content" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+       @* <input type="submit" value="Save" class="btn btn-primary" />*@
+        <button class="btn btn-primary" id="WritePost">Đăng</button>
+    </div>
+
+
+    <script src="~/lib/jquery/jquery.js"></script>
+<script src="~/js/AuthorWritePost.js"></script>
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
