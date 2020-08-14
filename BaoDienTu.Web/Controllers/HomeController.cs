@@ -44,6 +44,14 @@ namespace BaoDienTu.Web.Controllers
             return Json(new { fastpost });
         }
 
+        [Route("/Home/GetsTop5LastestPost")]
+        public JsonResult GetsTop5LastestPost()
+        {
+            var lastestpost = new List<Top5LastestPost>();
+            lastestpost = ApiHelper<List<Top5LastestPost>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetsTop5LastestPost");
+            return Json(new { lastestpost });
+        }
+
         [Route("/Home/Get/{id}")]
         public JsonResult Get(int id)
         {
@@ -68,6 +76,21 @@ namespace BaoDienTu.Web.Controllers
             var mostviewpost = new List<Top10MostViewOfDay>();
             mostviewpost = ApiHelper<List<Top10MostViewOfDay>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetTop10MostViewOfDay");
             return Json(new { mostviewpost });
+        }
+      
+        [Route("/Home/CreatePost")]
+        public JsonResult Create([FromBody] CreatePost model)
+        {
+            var post = new CreatePostResult();
+            post = ApiHelper<CreatePostResult>.HttpGetAsync($"{Helper.ApiUrl}api/post/create");
+            return Json(new { post });
+        }
+        [Route("/Home/UpdatePost")]
+        public JsonResult Update([FromBody] UpdatePost model)
+        {
+            var updatePost = new UpdatePostResult();
+            updatePost = ApiHelper<UpdatePostResult>.HttpGetAsync($"{Helper.ApiUrl}api/post/update");
+            return Json(new { updatePost });
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

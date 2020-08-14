@@ -46,5 +46,11 @@ namespace BaoDienTu.Web.Controllers
             post = ApiHelper<PostView>.HttpGetAsync($"{Helper.ApiUrl}post/get");
             return Json(new { post });
         }
+        public JsonResult GetsTop5LastestPost()
+        {
+            var post = new Top5LastestPost();
+            post = ApiHelper<Top5LastestPost>.HttpGetAsync($"{Helper.ApiUrl}post/GetsTop5LastestPost");
+            return Json(new { post });
+        }
     }
 }

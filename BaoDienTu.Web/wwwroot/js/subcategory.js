@@ -60,8 +60,6 @@ sub.delete = function (id) {
 }
 
 
-
-
 sub.get = function (id) {
     $.ajax({
         url: `/SubCategory/Get/${id}`,
@@ -82,47 +80,48 @@ sub.reset = function () {
     $('#SubCategoryId').val(0);
     $('#Category').val("0");
 }
-
+var a; 
 sub.save = function () {
-    if ($('#frmAddEditSub').val()) {
-        if ($('#SubCategoryId').val() == 0) {
-            var saveObj = {};
-            saveObj.SubcategoryName = $('#SubCategoryName').val();
-            saveObj.SubCategoryId = parseInt($('#SubCategoryId').val());
-            saveObj.categoryId = parseInt($('#Category').val());
-            $.ajax({
-                url: `/SubCategory/Create/`,
-                method: "POST",
-                dataType: "json",
-                contentType: "application/json",
-                data: JSON.stringify(saveObj),
-                success: function (data) {
-                    $('#addEditSub').modal('hide');
-                    bootbox.alert(data.subs.message);
-                    sub.drawTable();
-                }
-            });
-        }
-        else {
-            var saveObj = {};
-            saveObj.SubcategoryName = $('#SubCategoryName').val();
-            saveObj.SubCategoryId = parseInt($('#SubCategoryId').val());
-            $.ajax({
-                url: `/SubCategory/Update/` + saveObj.SubCategoryId,
-                method: "POST",
-                dataType: "json",
-                contentType: "application/json",
-                data: JSON.stringify(saveObj),
-                success: function (data) {
-                    $('#addEditSub').modal('hide');
-                    bootbox.alert(data.subs.message);
-                    sub.drawTable();
-                }
-            });
-        }
-     }
-     
+    if ($('#SubCategoryId').val() == '0') {
+        var saveObj = {};
+        saveObj.SubcategoryName = $('#SubCategoryName').val();
+        saveObj.categoryId = parseInt($('#Category').val());
+       a = saveObj;
+        $.ajax({
+            url: `/SubCategory/Create/`,
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(saveObj),
+            success: function (data) {
+                $('#addEditSub').modal('hide');
+                bootbox.alert(data.subs.message);
+                sub.drawTable();
+            }
+        });
+    }
+    else {
+        var saveObj = {};
+        saveObj.SubcategoryName = $('#SubCategoryName').val();
+        saveObj.categoryId = parseInt($('#Category').val());
+        saveObj.SubCategoryId = parseInt($('#SubCategoryId').val());
+        a = saveObj;
+        $.ajax({
+            url: `/SubCategory/Update/` + saveObj.SubCategoryId,
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(saveObj),
+            success: function (data) {
+                $('#addEditSub').modal('hide');
+                bootbox.alert(data.subs.message);
+                sub.drawTable();
+            }
+        });
+    }
 }
+     
+
 sub.initCategory = function () {
     $.ajax({
         url: "/Category/Gets",

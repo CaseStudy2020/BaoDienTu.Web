@@ -51,11 +51,11 @@ namespace BaoDienTu.Web.Controllers
             subs = ApiHelper<CreateCategoryResult>.HttpPostAsync($"{Helper.ApiUrl}api/subcategory/create", subCategory);
             return Json(new { subs });
         }
-        [Route("/subcategory/delete/{id}")]
+        [Route("subcategory/delete/{id}")]
         public JsonResult Delete(int id)
         {
             var subs = new DeleteSubCategoryResult();
-            subs = ApiHelper<DeleteSubCategoryResult>.HttpPostAsync($"{Helper.ApiUrl}api/subcategory/delete/{id}", "DELETE");
+            subs = ApiHelper<DeleteSubCategoryResult>.HttpGetAsync($"{Helper.ApiUrl}api/subcategory/delete/{id}", "DELETE");
             return Json(new { subs });
         }
         [Route("/subcategory/update/{id}")]

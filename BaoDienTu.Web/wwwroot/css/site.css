@@ -2789,7 +2789,7 @@ hr {
 /* line 839, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_common.scss */
 .w-padding {
   padding-top: 100px;
-  padding-bottom: 95px;
+  padding-bottom: 270px;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -2962,15 +2962,15 @@ hr {
 
 /* line 934, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_common.scss */
 .footer-padding {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 20px;
+  padding-bottom: 220px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* line 934, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_common.scss */
   .footer-padding {
-    padding-top: 100px;
-    padding-bottom: 70px;
+    padding-top: 20px;
+    padding-bottom: 275px;
   }
 }
 
@@ -2978,7 +2978,7 @@ hr {
   /* line 934, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_common.scss */
   .footer-padding {
     padding-top: 80px;
-    padding-bottom: 70px;
+    padding-bottom: 300px;
   }
 }
 
@@ -2986,7 +2986,7 @@ hr {
   /* line 934, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_common.scss */
   .footer-padding {
     padding-top: 50px;
-    padding-bottom: 30px;
+    padding-bottom: 570px;
   }
 }
 
@@ -3432,7 +3432,7 @@ hr {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   /* line 24, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
   .header-area .header-bottom {
-    padding: 0px 10px;
+    padding: 0px 0px;
   }
 }
 

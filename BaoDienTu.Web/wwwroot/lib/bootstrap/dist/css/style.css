@@ -3458,90 +3458,90 @@ hr {
 }
 
 /* line 49, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-.header-area .header-top .header-info-left .form-box {
-  position: relative;
+.header-area .header-top .header-info-left  .form-box {
+    position: relative;
 }
 
 /* line 51, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-.header-area .header-top .header-info-left .form-box input {
-  border: 1px solid #eeeeee;
-  border-radius: 0px;
-  padding: 10px 20px;
-  width: 450px;
-  color: #000000;
-}
+    .header-area .header-top .header-info-left  .form-box input {
+        border: 1px solid #eeeeee;
+        border-radius: 0px;
+        padding: 10px 20px;
+        width: 450px;
+        color: #000000;
+    }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   /* line 51, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-  .header-area .header-top .header-info-left .form-box input {
-    margin-bottom: 20px;
-  }
+    .header-area .header-top .header-info-left  .form-box input {
+        margin-bottom: 20px;
+    }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   /* line 51, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-  .header-area .header-top .header-info-left .form-box input {
-    width: 354px;
-  }
+    .header-area .header-top .header-info-left  .form-box input {
+        width: 354px;
+    }
 }
 
 @media only screen and (min-width: 1601px) and (max-width: 1800px) {
   /* line 51, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-  .header-area .header-top .header-info-left .form-box input {
-    width: 354px;
-  }
+    .header-area .header-top .header-info-left  .form-box input {
+        width: 354px;
+    }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
   /* line 51, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-  .header-area .header-top .header-info-left .form-box input {
-    width: 261px;
-  }
+    .header-area .header-top .header-info-left  .form-box input {
+        width: 261px;
+    }
 }
 
 /* line 73, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-.header-area .header-top .header-info-left .form-box .search-icon {
-  position: absolute;
-  top: 6px;
-  right: 1px;
-  padding: 7px 23px;
-  cursor: pointer;
-  background: #fff;
+.header-area .header-top .header-info-left  .form-box .search-icon {
+    position: absolute;
+    top: 6px;
+    right: 1px;
+    padding: 7px 23px;
+    cursor: pointer;
+    background: #fff;
 }
 
 /* line 80, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-.header-area .header-top .header-info-left .form-box .search-icon i {
-  color: #140C40;
-  cursor: pointer;
-  font-size: 18px;
-}
+    .header-area .header-top .header-info-left  .form-box .search-icon i {
+        color: #140C40;
+        cursor: pointer;
+        font-size: 18px;
+    }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* line 88, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-  .header-area .header-top .header-info-mid {
+  .header-area .header-top  .header-info-left {
     display: none !important;
   }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   /* line 88, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-  .header-area .header-top .header-info-mid {
-    display: none !important;
-  }
+    .header-area .header-top  .header-info-left {
+        display: none !important;
+    }
 }
 
 @media (max-width: 575px) {
   /* line 88, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-  .header-area .header-top .header-info-mid {
-    display: none !important;
-  }
+    .header-area .header-top  .header-info-left {
+        display: none !important;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* line 98, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_headerMenu.scss */
-  .header-area .header-top .header-info-mid .logo {
-    margin-bottom: 20px;
-  }
+    .header-area .header-top  .header-info-left .logo {
+        margin-bottom: 20px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

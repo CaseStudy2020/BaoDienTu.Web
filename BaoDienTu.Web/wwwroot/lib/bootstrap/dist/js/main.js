@@ -333,6 +333,8 @@ var testimonial = $('.h1-testimonial-active');
                 });
             }
         });
+       
+
  // Single Img slder
  $('.man-slider-active').slick({
   dots: false,
