@@ -17,7 +17,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label asp-for="thumbnail" class="control-label"></label>
-                <input asp-for="thumbnail" class="form-control" id="thumbnail"/>
+                <input asp-for="thumbnail" class="form-control" id="thumbnail" type="file" />
                 <span asp-validation-for="thumbnail" class="text-danger"></span>
             </div>
         </div>
@@ -57,7 +57,8 @@
     </div>
 
 
-    <script src="~/lib/jquery/jquery.js"></script>
+ <script src="~/lib/jquery/jquery.js"></script>
+
 <script src="~/js/AuthorWritePost.js"></script>
         @section Scripts {
             @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
