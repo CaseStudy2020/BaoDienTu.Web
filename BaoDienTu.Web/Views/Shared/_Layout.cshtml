@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewBag.Title - Youth Magazine</title>
+    <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="~/lib/bootstrap/dist/css/owl.carousel.min.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/dist/css/slicknav.css" rel="stylesheet" />
@@ -42,44 +43,45 @@
                         <div class="col-xl-12">
                             <div class="row d-flex justify-content-lg-between align-items-center">
                                 <div class="header-info-left">
-                                    <li class="d-none d-lg-block">
-                                        <div class="form-box f-right ">
-                                            <input type="text" name="Search" placeholder="Search news">
-                                            <div class="search-icon">
-                                                <i class="fas fa-search"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </div>
-                                <div class="header-info-mid">
-                                    <!-- logo -->
                                     <div class="logo">
                                         <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo.png" alt="logo"></a>
                                     </div>
                                 </div>
+                                <div class="header-info-mid">
+                                    <!-- logo -->
+
+                                </div>
                                 <div class="header-info-right d-flex align-items-center">
                                     <ul>
-                                        <li><a asp-controller="About" asp-action="Index">About</a></li>
-                                        <li><a asp-controller="Contact" asp-action="Index"><i class="fas fa-phone"></i></a></li>
-                                        <li><a asp-controller="Account" asp-action="Login"><i class="fas fa-user-circle"></i></a></li>
-                                        <li><a asp-controller="Account" asp-action="Register">Sign Up</a></li>
-                                        <li><a asp-controller="Dashboard" asp-action="Index">Dashboard</a></li>
+                                        <li><a asp-controller="About" asp-action="Index" class="text-primary">About</a></li>
+                                        <li><a asp-controller="Contact" asp-action="Index"><i class="fas fa-phone text-primary"></i></a></li>
+                                        <li><a asp-controller="Account" asp-action="Login"><i class="fas fa-user-circle text-primary"></i></a></li>
+                                        <li><a asp-controller="Account" asp-action="Register" class="text-primary">Sign Up</a></li>
+                                        <li><a asp-controller="Dashboard" asp-action="Index" class="text-primary">Dashboard</a></li>
                                     </ul>
                                     <!-- Social -->
                                     <div class="header-social">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                        <a href="#"><i class="fab fa-twitter text-primary"></i></a>
+                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f text-primary"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p text-primary"></i></a>
+                                    </div>
+                                    <div class="d-none d-lg-block">
+                                        <div class="form-box f-right ">
+                                            <input type="text" name="Search" placeholder="Search news">
+                                            <div class="search-icon">
+                                                <i class="fas fa-search position-absolute" style="top:45px;right:20px"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="header-bottom  header-sticky">
+                <div class="header-bottom  header-sticky" style="box-shadow: 0 2px 3px rgba(0,0,0,.15);">
                     <div class="container-fluid">
                         <div class="row align-items-center">
-                            <div class="col-12">
+                            <div class="col-12" style="padding-left:0px;padding-right:0px;">
                                 <div class="logo2">
                                     <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo.png" alt=""></a>
                                 </div>
@@ -104,25 +106,25 @@
         </div>
         <!-- Header End -->
     </header>
-    <div class="container">
+    <div class="container mt-4">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    @*<footer>*@
-        <div class="footer-area footer-padding">
+    <footer>
+        <div class="footer-area footer-padding" style="background-color:whitesmoke">
             <div class="header-area">
                 <div class="main-header ">
-                    <div class="header-top d-lg-block d-none">
+                    <div class="header-top d-lg-block d-none" style="border-bottom:1px solid #eee;">
                         <div class="container">
                             <div class="col-xl-12">
                                 <div class="row d-flex justify-content-between align-items-center">
                                     <div class="header-info-left d-flex justify-content-center">
                                         <div class="header-social">
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
-                                            <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                            <a href="#"><i class="fab fa-twitter text-primary"></i></a>
+                                            <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f text-primary"></i></a>
+                                            <a href="#"><i class="fab fa-pinterest-p text-primary"></i></a>
                                         </div>
                                     </div>
                                     <div class="header-info-mid">
@@ -132,8 +134,8 @@
                                     </div>
                                     <div class="header-info-right d-flex align-items-center">
                                         <ul>
-                                            <li><a asp-controller="About" asp-action="Index">About</a></li>
-                                            <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                                            <li><a asp-controller="About" asp-action="Index" class="text-primary">About</a></li>
+                                            <li><a asp-controller="Contact" asp-action="Index" class="text-primary">Contact</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -145,20 +147,20 @@
                             @*<div class="row align-items-center">*@
                             <div class="col-12">
                                 <div class="main-menu text-center">
-                                    <nav>
-                                        <ul class="categoriescus">
-                                            @*categories*@
-                                        </ul>
-                                    </nav>
+                                    @*<nav>
+                                            <ul class="categoriescus">
+                                                categories
+                                            </ul>
+                                        </nav>*@
                                     <div class="container">
                                         <div style=" width: 50%;text-align: left;float: left;">
                                             <p>
                                                 <strong>Publication License No. 000/GP-BTTTT issued on 00.0.2020</strong><br />
                                                 © 2000-2020 Copyright of HVN team. Reproduction in any form without written permission is prohibited.
                                                 Developed by HVN Technologies, JSC.<br />
-                                                Add: 28 - Nguyen Tri Phuong str.<br />
-                                                Phone: 0789.999.999<br />
-                                                Mail:hvnteam@gmail.com
+                                                Add: <strong>28 - Nguyen Tri Phuong str</strong><br />
+                                                Phone: <strong>0789.999.999</strong><br />
+                                                Mail:<strong>hvnteam@gmail.com</strong>
                                             </p>
 
                                         </div>
@@ -184,54 +186,37 @@
                 </div>
             </div>
         </div>
-        @*<div class="footer-bottom-area">
-                <div class="container">
-                    <div class="footer-border">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-xl-9 col-lg-8">
-                                <div class="footer-copy-right text-center">
-                                    <p>
-                                        &copy;
-                                        <script>document.write(new Date().getFullYear());</script> All rights reserved by HVN team| Electronic Knowledge Magazine - Line Agency: team HVN
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>*@
-
-        <!-- Scroll Up -->
-        <div id="back-top">
-            <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-        </div>
-        <script src="~/lib/bootstrap/dist/js/modernizr-3.5.0.min.js"></script>
-        <script src="~/lib/jquery/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/popper.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/jquery.slicknav.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/owl.carousel.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/slick.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/wow.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/animated.headline.js"></script>
-        <script src="~/lib/bootstrap/dist/js/jquery.magnific-popup.js"></script>
-        <script src="~/lib/bootstrap/dist/js/gijgo.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/jquery.nice-select.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/jquery.sticky.js"></script>
-        <script src="~/lib/bootstrap/dist/js/jquery.barfiller.js"></script>
-        <script src="~/lib/bootstrap/dist/js/jquery.counterup.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/waypoints.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/jquery.countdown.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/hover-direction-snake.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/contact.js"></script>
-        <script src="~/lib/bootstrap/dist/js/jquery.form.js"></script>
-        <script src="~/lib/bootstrap/dist/js/jquery.validate.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/mail-script.js"></script>
-        <script src="~/lib/bootstrap/dist/js/jquery.ajaxchimp.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/plugins.js"></script>
-        <script src="~/lib/bootstrap/dist/js/main.js"></script>
-        @*<script src="~/js/home.js" asp-append-version="true"></script>*@
-        @RenderSection("Scripts", required: false)
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top">
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+    <script src="~/lib/bootstrap/dist/js/modernizr-3.5.0.min.js"></script>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/jquery.slicknav.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/owl.carousel.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/slick.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/wow.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/animated.headline.js"></script>
+    <script src="~/lib/bootstrap/dist/js/jquery.magnific-popup.js"></script>
+    <script src="~/lib/bootstrap/dist/js/gijgo.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/jquery.nice-select.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/jquery.sticky.js"></script>
+    <script src="~/lib/bootstrap/dist/js/jquery.barfiller.js"></script>
+    <script src="~/lib/bootstrap/dist/js/jquery.counterup.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/waypoints.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/jquery.countdown.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/hover-direction-snake.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/contact.js"></script>
+    <script src="~/lib/bootstrap/dist/js/jquery.form.js"></script>
+    <script src="~/lib/bootstrap/dist/js/jquery.validate.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/mail-script.js"></script>
+    <script src="~/lib/bootstrap/dist/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/plugins.js"></script>
+    <script src="~/lib/bootstrap/dist/js/main.js"></script>
+    @*<script src="~/js/home.js" asp-append-version="true"></script>*@
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -37,13 +37,14 @@ function encodeImageFileAsURL(element) {
 }  
 WritePostObject.getData = function () {
     
-    WritePostObject.link = "";
-    WritePostObject.authorId = $("#authorId").val();
+    WritePostObject.Link = "";
+    WritePostObject.AuthorId = $("#authorId").val();
 
-    WritePostObject.thumbnail = imagebase64;
-    WritePostObject.subCategoryId = parseInt( $("#subCategoryId").val());
-    WritePostObject.title = $("#title").val();
-    WritePostObject.content = CKEDITOR.instances['content'].getData();;
+    WritePostObject.Thumbnail = imagebase64;
+    WritePostObject.SubCategoryId = parseInt($("#subCategoryId").val());
+   
+    WritePostObject.Title = $("#title").val();
+    WritePostObject.Content = CKEDITOR.instances['content'].getData();;
 }
 
 

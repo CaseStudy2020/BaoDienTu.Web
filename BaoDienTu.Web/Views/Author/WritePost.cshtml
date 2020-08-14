@@ -13,43 +13,44 @@
 
 
 
-    <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-                <label asp-for="thumbnail" class="control-label"></label>
-                <input asp-for="thumbnail" class="form-control" id="thumbnail" type="file" />
-                <span asp-validation-for="thumbnail" class="text-danger"></span>
-            </div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="Thumbnail" class="control-label"></label>
+            <input asp-for="Thumbnail" class="form-control" id="thumbnail" type="file" />
+            <span asp-validation-for="Thumbnail" class="text-danger"></span>
         </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <label asp-for="authorId" class="control-label"></label>
-                <input asp-for="authorId" class="form-control" id="authorId" />
-                <span asp-validation-for="authorId" class="text-danger"></span>
-            </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="AuthorId" class="control-label"></label>
+            <input asp-for="AuthorId" class="form-control" id="authorId" />
+            <span asp-validation-for="AuthorId" class="text-danger"></span>
         </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <label asp-for="subCategoryId" class="control-label"></label>
-                <input asp-for="subCategoryId" class="form-control" id="subCategoryId"/>
-                <span asp-validation-for="subCategoryId" class="text-danger"></span>
-            </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="SubCategoryId" class="control-label"></label>
+            <input asp-for="SubCategoryId" class="form-control" id="subCategoryId" />
+            <span asp-validation-for="SubCategoryId" class="text-danger"></span>
         </div>
+    </div>
 
 
+
+</div>
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" id="title"/>
+        <span asp-validation-for="Title" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="title" class="control-label"></label>
-        <input asp-for="title" class="form-control" id="title"/>
-        <span asp-validation-for="title" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="content" class="control-label"></label>
+        <label asp-for="Content" class="control-label"></label>
         <textarea name="content" id="content"></textarea>
         <script>
             CKEDITOR.replace('content');
         </script>
-        <span asp-validation-for="content" class="text-danger"></span>
+        <span asp-validation-for="Content" class="text-danger"></span>
     </div>
     <div class="form-group">
        @* <input type="submit" value="Save" class="btn btn-primary" />*@

@@ -8,7 +8,7 @@ namespace BaoDienTu.Web.ViewModel
 {
     public class ResultPostViewModel
     {
-        public int postId { get; set; }
-        public string message { get; set; }
+        public int PostId { get; set; }
+        public string Message { get; set; }
     }
 }

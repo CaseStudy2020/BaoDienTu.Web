@@ -37,7 +37,7 @@ home.getTop1LatestPost = function () {
                                       <a href="#"><img src="${top5[i].thumbnail}" alt=""></a>
                                          <div class="trend-top-cap">
                                            <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms"><strong>${top5[i].title}</strong></span>
-                                                <h2><a href="post_details.html" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">${top5[i].shortContent}...</a></h2>
+                                                <h2><a href="post_details.html" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">${top5[i].shortContent2}...</a></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -67,7 +67,7 @@ home.getTop2LatestPost = function () {
                                             <div class="banner-cap2 banner-cap3">
                                                 <p>${top5[i].title}</p>
                                                 <h3><a href="post_details.html">${top5[i].title}</a></h3>
-                                                <p class="normal">${top5[i].shortContent}...</p>
+                                                <p class="normal">${top5[i].shortContent2}...</p>
                                             </div>
                                         </div>
                                     </div>
@@ -119,94 +119,53 @@ home.getByCategory = function () {
                             </div>
                         </div>
                     </div>
-                    <div class="row" id="post_${v.categoriId}">
-                   <div class="col-lg-4 col-md-6">
-                            <div class="single-baner-nw2 mb-30">
-                                <div class="banner-img-cap2">
-                                    <div class="banner-img">
-                                        <img src="lib/img/gallery/trend1.png" alt="">
-                                    </div>
-                                    <div class="banner-cap2">
-                                        <p>Technology</p>
-                                        <h3><a href="post_details.html">The pomelo case: scope of plant rights in China</a></h3>
-                                        <p class="blog-text" style="text-transform: normal !important;">Indie folks start out by making something they want to read, that tell stories they want told..</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-baner-nw2 mb-30">
-                                <div class="banner-img-cap2">
-                                    <div class="banner-img">
-                                        <img src="lib/img/gallery/trend2.png" alt="">
-                                    </div>
-                                    <div class="banner-cap2">
-                                        <p>Technology</p>
-                                        <h3><a href="post_details.html">The pomelo case: scope of plant rights in China</a></h3>
-                                        <p class="blog-text" style="text-transform: normal !important;">Indie folks start out by making something they want to read, that tell stories they want told..</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-baner-nw2 mb-30">
-                                <div class="banner-img-cap2">
-                                    <div class="banner-img">
-                                        <img src="lib/img/gallery/trend2.png" alt="">
-                                    </div>
-                                    <div class="banner-cap2">
-                                        <p>Technology</p>
-                                        <h3><a href="post_details.html">The pomelo case: scope of plant rights in China</a></h3>
-                                        <p class="blog-text" style="text-transform: normal !;">Indie folks start out by making something they want to read, that tell stories they want told..</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="row" id="post_${v.categoryId}">
+                 
 
                     </div>
                 </div>
             </div>
                     `
                 );
-                //home.drawpostofcategory(v.categoriId);
+                home.drawpostofcategory(v.categoryId);
             });
         }
     });
 };
-//home.drawpostofcategory = function (categoryId) {
-//    $.ajax({
-//        url: `/Home/GetPostByCategoryId/${categoryId}`,
-//        method: "GET",
-//        dataType: "json",
-//        success: function (data) {
-//            $(`#post_${v.categoriId}`).empty();
-//            $.each(data.postByCateId, function (i, k) {
-//                $(`#post_${v.categoriId}`).append(`<div class="col-lg-4 col-md-6">
-//                            <div class="single-baner-nw2 mb-30">
-//                                <div class="banner-img-cap2">
-//                                    <div class="banner-img">
-//                                        <a href="#"><img src="${k.thumbnail}" alt=""></a>
-//                                    </div>
-//                                    <div class="banner-cap2">
-//                                        <p>${k.thumbnail}</p>
-//                                        <h3><a href="post_details.html">${k.title}</a></h3>
-//                                        <p class="blog-text" style="text-transform: normal !important;">${k.shortContent}...</p>
-//                                    </div>
-//                                </div>
-//                            </div>
-//                        </div>`
-//                );
-//            });
-//        }
-//    });
-//}
+home.drawpostofcategory = function (categoryId) {
+    $.ajax({
+        url: `/Home/GetsTop3LastestPostByCategoryId/${categoryId}`,
+        method: "GET",
+        dataType: "json",
+        success: function (data) {
+            $(`#post_${v.categoriId}`).empty();
+            $.each(data.post3ByCateId, function (i, k) {
+                $(`#post_${v.categoriId}`).append(`<div class="col-lg-4 col-md-6">
+                            <div class="single-baner-nw2 mb-30">
+                                <div class="banner-img-cap2">
+                                    <div class="banner-img">
+                                        <a href="#"><img src="${k.thumbnail}" alt=""></a>
+                                    </div>
+                                    <div class="banner-cap2">
+                                        <p>${k.title}</p>
+                                        <h3><a href="post_details.html">${k.title}</a></h3>
+                                        <p class="blog-text" style="text-transform: normal !important;">${k.shortContent}...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
+                );
+            });
+        }
+    });
+}
 home.init = function () {
     home.GetCategoryId();
     home.GetTop5();
     setInterval(home.getTop1LatestPost, 1000);
     setInterval(home.getTop2LatestPost, 1000);
     setInterval(home.getTop3LatestPost, 1000);
-    setInterval(home.getByCategory, 1000);
+    home.getByCategory();
     
 
 };
