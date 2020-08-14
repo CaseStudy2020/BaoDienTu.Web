@@ -1,15 +1,13 @@
-﻿using BaoDienTu.Web.Models.Enum;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace BaoDienTu.Web.Models.Post
 {
-    public class UpdatePostResult
+    public class DeletePostResult
     {
         public int PostId { get; set; }
-     
-       public string Message { get; set; }
+        public string Message { get; set; }
     }
 }
