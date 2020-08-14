@@ -51,7 +51,13 @@ namespace BaoDienTu.Web.Controllers
             lastestpost = ApiHelper<List<Top5LastestPost>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetsTop5LastestPost");
             return Json(new { lastestpost });
         }
-
+        [Route("/Home/getByCategoryId/{categoryId}")]
+        public JsonResult GetPostByCategoryId(int categoryId)
+        {
+            var postByCateId = new List<PostByCategoryId>();
+            postByCateId = ApiHelper<List<PostByCategoryId>>.HttpGetAsync($"{Helper.ApiUrl}api/post/getByCategoryId/{categoryId}");
+            return Json(new { postByCateId });
+        }
         [Route("/Home/Get/{id}")]
         public JsonResult Get(int id)
         {
