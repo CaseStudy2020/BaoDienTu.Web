@@ -67,5 +67,13 @@ namespace BaoDienTu.Web.Controllers
             postBySubId = ApiHelper<List<PostBySubCategoryId>>.HttpGetAsync($"{Helper.ApiUrl}api/post/getBySubCategoryId/{subCategoryId}");
             return View(postBySubId);
         }
+        [HttpGet]
+        
+        public IActionResult PostDetail(int id)
+        {
+            var postById = new PostView();
+            postById = ApiHelper<PostView>.HttpGetAsync($"{Helper.ApiUrl}api/post/get/{id}");
+            return View(postById);
+        }
     }
 }
