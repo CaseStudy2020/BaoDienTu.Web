@@ -269,7 +269,7 @@
             $.each(data.categories, function (i, v) {
                 $('ul#navigation').append(
                     `
-                    <li><a href="category.html">${v.categoryName}</a></li>
+                    <li><a asp-controller="Home" asp-action="Index">${v.categoryName}</a></li>
                     `
                 );
             });

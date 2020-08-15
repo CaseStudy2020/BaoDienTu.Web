@@ -52,5 +52,20 @@ namespace BaoDienTu.Web.Controllers
             post = ApiHelper<Top5LastestPost>.HttpGetAsync($"{Helper.ApiUrl}post/GetsTop5LastestPost");
             return Json(new { post });
         }
+        [HttpGet]
+        public IActionResult PostByCategory(int categoryId)
+        {
+            var postByCateId = new List<PostByCategoryId>();
+            postByCateId = ApiHelper<List<PostByCategoryId>>.HttpGetAsync($"{Helper.ApiUrl}api/post/getByCategoryId/{categoryId}");
+            return View(postByCateId);
+        }
+        [HttpGet]
+        
+        public IActionResult PostBySubCategory(int subCategoryId)
+        {
+            var postBySubId = new List<PostBySubCategoryId>();
+            postBySubId = ApiHelper<List<PostBySubCategoryId>>.HttpGetAsync($"{Helper.ApiUrl}api/post/getBySubCategoryId/{subCategoryId}");
+            return View(postBySubId);
+        }
     }
 }
