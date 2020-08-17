@@ -269,12 +269,16 @@
             $.each(data.categories, function (i, v) {
                 $('ul#navigation').append(
                     `
-                    <li><a href="Post/PostByCategory/${v.categoryId}">${v.categoryName}</a></li>
+                  
+                    <li><a href="/Post/PostByCategory/${v.categoryId}">${v.categoryName}</a></li>
+                   
                     `
                 );
             });
         }
     });
+
+    // <li><a asp-controller="Post" asp-action="PostByCategroy" asp-route-id="${v.categoryId}">${v.categoryName}</a></li>
     $.ajax({
         url: `/Home/GetsCategory`,
         method: "GET",
