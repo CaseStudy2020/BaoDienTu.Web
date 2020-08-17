@@ -269,7 +269,7 @@
             $.each(data.categories, function (i, v) {
                 $('ul#navigation').append(
                     `
-                    <li><a asp-controller="Home" asp-action="Index">${v.categoryName}</a></li>
+                    <li><a href="Post/PostByCategory/${v.categoryId}">${v.categoryName}</a></li>
                     `
                 );
             });
@@ -306,33 +306,33 @@
         }
     });
 
-    $.ajax({
-        url: `/Home/GetTop10MostViewOfDay`,
-        method: "GET",
-        dataType: "json",
-        success: function (data) {
-            $('#mostviewpost').empty();
-            $.each(data.mostviewpost, function (i, v) {
-                $('#mostviewpost').append(
-                    `<div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="#"><img src="${v.thumbnail}" style="width:264px;height:214px" alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="post_details.html"><h4>${v.title}</h4></a>
-                                <span>${v.dateCreated} - <i class="far fa-eye"></i> ${v.view}</span>
-                                <p>${v.shortContent}...</p>
-                                <a href="post_details.html" style="color:blue">Read more <i class="far fa-arrow-alt-circle-right"></i></a>
-                                <span><i class="far fa-thumbs-up"></i> ${v.like} - <i class="fas fa-comment"></i> ${v.numberOfComment}</span>
-                            </div>
-                        </div>
-                    </div>
-                    `
-                );
-            });
-        }
-    });
+    //$.ajax({
+    //    url: `/Home/GetTop10MostViewOfDay`,
+    //    method: "GET",
+    //    dataType: "json",
+    //    success: function (data) {
+    //        $('#mostviewpost').empty();
+    //        $.each(data.mostviewpost, function (i, v) {
+    //            $('#mostviewpost').append(
+    //                `<div class="single-job-items mb-30">
+    //                    <div class="job-items">
+    //                        <div class="company-img">
+    //                            <a href="Post/PostDetail/${v.postId}"><img src="${v.thumbnail}" style="width:264px;height:214px" alt=""></a>
+    //                        </div>
+    //                        <div class="job-tittle">
+    //                            <a href="Post/PostDetail/${v.postId}"><h4>${v.title}</h4></a>
+    //                            <span>${v.dateCreated} - <i class="far fa-eye"></i> ${v.view}</span>
+    //                            <p>${v.shortContent}...</p>
+    //                            <a href="Post/PostDetail/${v.postId}" style="color:blue">Read more <i class="far fa-arrow-alt-circle-right"></i></a>
+    //                            <span><i class="far fa-thumbs-up"></i> ${v.like} - <i class="fas fa-comment"></i> ${v.numberOfComment}</span>
+    //                        </div>
+    //                    </div>
+    //                </div>
+    //                `
+    //            );
+    //        });
+    //    }
+    //});
 
 
     // Single Img slder

@@ -73,7 +73,12 @@ namespace BaoDienTu.Web.Controllers
         {
             var postById = new PostView();
             postById = ApiHelper<PostView>.HttpGetAsync($"{Helper.ApiUrl}api/post/get/{id}");
-            return View(postById);
+            if (postById != null)
+            {
+                ViewBag.PostId = postById;
+            }
+            return View();
+
         }
     }
 }

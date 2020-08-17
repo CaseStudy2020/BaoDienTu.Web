@@ -4,12 +4,12 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     var sub = ViewBag.SubCategory != null ? ViewBag.SubCategory as CategoryView : new CategoryView();
 }
-<h6><a href="/">Home</a> &gt; Category of @sub.CategoryName</h6>
+<h6><a asp-controller="Category" asp-action="Index">@sub.CategoryName</a> &gt; SubCategory of @sub.CategoryName</h6>
 <div class="row">
     <input hidden id="CategoryId" value="@sub.CategoryId" />
 
     <div class="col-12 mb-3 mt-2">
-        <a href="javascript:void(0);" class="btn btn-success" onclick="sub.openAddEditSub()">Create</a>
+        <a href="javascript:void(0);" class="btn btn-outline-primary" onclick="sub.openAddEditSub()">Create</a>
     </div>
 </div>
 <table id="tbSub" class="table table-bordered table-hover">

@@ -14,8 +14,8 @@ sub.drawTable = function () {
                         <td>${v.subCategoryName}</td>
                          <td>${v.categoryId}</td>
                         <td>
-                          <a href="javascripts:;" onclick="sub.get(${v.subCategoryId})" class="btn btn-success">Edit</a> 
-                            <a href="javascripts:;" onclick="sub.delete(${v.subCategoryId})" class="btn btn-danger">Delete</a>
+                          <a href="javascripts:;" onclick="sub.get(${v.subCategoryId})" class=" text-success"><i class="fa fa-edit(alias)"></i></a> 
+                            <a href="javascripts:;" onclick="sub.delete(${v.subCategoryId})" class=" text-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>`
                 );

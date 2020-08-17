@@ -34,7 +34,7 @@ home.getTop1LatestPost = function () {
                         <div class="single-slider">
                             <div class="trending-top mb-30">
                                 <div class="trend-top-img text-center">
-                                      <a href="#"><img src="${top5[i].thumbnail}" alt=""></a>
+                                      <a href="Post/PostDetail/${top5[i].postId}"><img src="${top5[i].thumbnail}" alt=""></a>
                                          <div class="trend-top-cap">
                                            <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms"><strong>${top5[i].title}</strong></span>
                                                 <h2><a href="post_details.html" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">${top5[i].shortContent2}...</a></h2>
@@ -56,7 +56,7 @@ home.getTop2LatestPost = function () {
                                   <div class="single-baner-nw2 mb-30 ">
                                         <div class="banner-img-cap2">
                                             <div class="banner-img">
-                                                 <a href="#"><img src="${top5[i].thumbnail}" alt=""></a>
+                                                 <a href="Post/PostDetail/${top5[i].postId}"><img src="${top5[i].thumbnail}" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@ home.getTop2LatestPost = function () {
                                         <div class="banner-img-cap2">
                                             <div class="banner-cap2 banner-cap3">
                                                 <p>${top5[i].title}</p>
-                                                <h3><a href="post_details.html">${top5[i].title}</a></h3>
+                                                <h3><a href="Post/PostDetail/${top5[i].postId}">${top5[i].title}</a></h3>
                                                 <p class="normal">${top5[i].shortContent2}...</p>
                                             </div>
                                         </div>
@@ -85,11 +85,11 @@ home.getTop3LatestPost = function () {
                             <div class="single-baner-nw2 mb-30 text-center">
                                 <div class="banner-img-cap2">
                                     <div class="banner-img">
-                                       <a href="#"><img src="${top5[i].thumbnail}" alt="">
+                                       <a href="Post/PostDetail/${top5[i].postId}"><img src="${top5[i].thumbnail}" alt="">
                                     </div>
                                     <div class="banner-cap2">
                                         <p>${top5[i].title}</p>
-                                        <h3><a href="post_details.html">${top5[i].shortContent2}...</a></h3>
+                                        <h3><a href="Post/PostDetail/${top5[i].postId}">${top5[i].shortContent2}...</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -159,13 +159,67 @@ home.drawpostofcategory = function (categoryId) {
         }
     });
 }
+
+
+
+home.getTop10PostByDay = function () {
+    $.ajax({
+        url: `/Home/GetTop10MostViewOfDay`,
+        method: "GET",
+        dataType: "json",
+        success: function (data) {
+            $('#mostviewpost').empty();
+            $.each(data.mostviewpost, function (i, v) {
+                $('#mostviewpost').append(
+                    `<div class="single-job-items mb-30">
+                        <div class="job-items">
+                            <div class="company-img">
+                                <a href="Post/PostDetail/${v.postId}"><img src="${v.thumbnail}" style="width:264px;height:214px" alt=""></a>
+                            </div>
+                            <div class="job-tittle">
+                                <a href="Post/PostDetail/${v.postId}"><h4>${v.title}</h4></a>
+                                <span>${v.dateCreated} - <i class="far fa-eye"></i> ${v.view}</span>
+                                <p>${v.shortContent}...</p>
+                                <a href="Post/PostDetail/${v.postId}" style="color:blue">Read more <i class="far fa-arrow-alt-circle-right"></i></a>
+                                <span><i class="far fa-thumbs-up"></i> ${v.like} - <i class="fas fa-comment"></i> ${v.numberOfComment}</span>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                );
+            });
+        }
+    });
+}
+
+//home.getAllCategory = function () {
+//    $.ajax({
+//        url: `/Home/GetsCategory`,
+//        method: "GET",
+//        dataType: "json",
+//        success: function (data) {
+//            $('#navigation').empty();
+//            $.each(data.categories, function (i, v) {
+//                $('#navigation').append(
+//                    `
+//                    <li><a href="Post/PostByCategory/${v.categoriId}">${v.categoryName}</a></li>
+//                    `
+//                );
+//            });
+//        }
+//    });
+//}
 home.init = function () {
+    //home.getAllCategory();
     home.GetCategoryId();
     home.GetTop5();
     setInterval(home.getTop1LatestPost, 1000);
     setInterval(home.getTop2LatestPost, 1000);
     setInterval(home.getTop3LatestPost, 1000);
+    home.getTop10PostByDay();
     home.getByCategory();
+    home.drawpostofcategory();
+
     
 
 };
