@@ -36,16 +36,13 @@ function encodeImageFileAsURL(element) {
     reader.readAsDataURL(file);
 }  
 WritePostObject.getData = function () {
-    
+
     WritePostObject.Link = "";
     WritePostObject.AuthorId = $("#authorId").val();
 
     WritePostObject.Thumbnail = imagebase64;
     WritePostObject.SubCategoryId = parseInt($("#subCategoryId").val());
-   
+
     WritePostObject.Title = $("#title").val();
-    WritePostObject.Content = CKEDITOR.instances['content'].getData();;
+    WritePostObject.Content = $('#content').val();
 }
-
-
-
