@@ -9,11 +9,8 @@ using BaoDienTu.Web.Models;
 using BaoDienTu.Web.Models.Post;
 using BaoDienTu.Web.Ultilities;
 using BaoDienTu.Web.Models.Catagory;
-<<<<<<< HEAD
 using BaoDienTu.Web.Models.SubCategory;
-=======
 using BaoDienTu.Web.Models.SearchContent;
->>>>>>> origin/Dev-Cuong
 
 namespace BaoDienTu.Web.Controllers
 {
