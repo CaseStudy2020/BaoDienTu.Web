@@ -34,6 +34,8 @@
 
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0" nonce="PFqMPCtD"></script>
     <!-- ? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -95,12 +97,12 @@
                     <div class="container-fluid">
                         <div class="row align-items-center">
                             <div class="col-12" style="padding-left:0px;padding-right:0px;">
-                                <div class="logo2">
-                                    <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo.png" alt=""></a>
-                                </div>
-                                <div class="logo3 d-block d-sm-none">
-                                    <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo-mobile.png" alt=""></a>
-                                </div>
+                                @*<div class="logo2">
+                                        <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo.png" alt=""></a>
+                                    </div>*@
+                                @*<div class="logo3 d-block d-sm-none">
+                                        <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo-mobile.png" alt=""></a>
+                                    </div>*@
                                 <div class="main-menu text-center d-none d-lg-block">
                                     <nav class="menu">
                                         @*<ul id="navigation">
@@ -264,7 +266,7 @@
     <script src="~/lib/bootstrap/dist/js/jquery.ajaxchimp.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/plugins.js"></script>
     <script src="~/lib/bootstrap/dist/js/main.js" asp-append-version="true"></script>
-    <script src="~/js/home.js" asp-append-version="true"></script>
+    @*<script src="~/js/home.js" asp-append-version="true"></script>*@
     @RenderSection("Scripts", required: false)
 </body>
 </html>

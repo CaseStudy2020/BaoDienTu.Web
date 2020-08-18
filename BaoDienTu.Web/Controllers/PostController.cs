@@ -72,12 +72,8 @@ namespace BaoDienTu.Web.Controllers
         public IActionResult PostDetail(int id)
         {
             var postById = new PostView();
-            postById = ApiHelper<PostView>.HttpGetAsync($"{Helper.ApiUrl}api/post/get/{id}");
-            if (postById != null)
-            {
-                ViewBag.PostId = postById;
-            }
-            return View();
+            postById = ApiHelper<PostView>.HttpGetAsync($"{Helper.ApiUrl}api/post/get/{id}");           
+            return View(postById);
 
         }
     }

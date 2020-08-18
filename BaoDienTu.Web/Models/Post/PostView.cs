@@ -23,5 +23,6 @@ namespace BaoDienTu.Web.Models.Post
         public decimal AverageRate { get; set; }
         public int CategoryId { get; set; }
         public string Thumbnail { get; set; }
+        public int NumberOfComment { get; set; }
     }
 }

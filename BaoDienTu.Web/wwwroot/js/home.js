@@ -34,10 +34,10 @@ home.getTop1LatestPost = function () {
                         <div class="single-slider">
                             <div class="trending-top mb-30">
                                 <div class="trend-top-img text-center">
-                                      <a href="Post/PostDetail/${top5[i].postId}"><img src="${top5[i].thumbnail}" alt=""></a>
+                                      <a href="Post/PostDetail/${top5[i].postId}"><img src="${top5[i].thumbnail}" style="width:570px;height:500px" alt=""></a>
                                          <div class="trend-top-cap">
-                                           <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms"><strong>${top5[i].title}</strong></span>
-                                                <h2><a href="post_details.html" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">${top5[i].shortContent2}...</a></h2>
+                                            <a href="Post/PostDetail/${top5[i].postId}"><span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms"><strong>${top5[i].title}</strong></span></a>
+                                        
                                             </div>
                                         </div>
                                     </div>
