@@ -1,7 +1,11 @@
 ﻿@model List<PostByCategoryId>
+@using BaoDienTu.Web.Models.Catagory;
+@using BaoDienTu.Web.Models.SubCategory;
 @{
     ViewBag.Title = "Youth-Magazine";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Category> categories = ViewBag.Categories;
+    List<ListSubByCategoryId> listSub = ViewBag.ListSubByCategoryId;
 }
 
 <main>
@@ -13,7 +17,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Category</a></li>
+                            <li class="breadcrumb-item"><a href="#">CategoryName</a></li>
                         </ol>
                     </nav>
                 </div>

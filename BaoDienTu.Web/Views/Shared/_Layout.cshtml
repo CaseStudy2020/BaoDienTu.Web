@@ -120,13 +120,13 @@
                                                     for (int i = 0; i < categories.Count; i++)
                                                     {
                                                         <li class="dropdown magz-dropdown">
-                                                            <a href="category.html">@categories[i].CategoryName </a>
+                                                            <a href="/Post/PostByCategory/@categories[i].CategoryId">@categories[i].CategoryName </a>
                                                             <ul class="dropdown-menu">
                                                                 @if (listSub[i].allSub != null)
                                                                 {
                                                                     foreach (SubCategory sub in listSub[i].allSub)
                                                                     {
-                                                                        <li><a href="index.html">@sub.SubCategoryName</a></li>
+                                                                        <li><a href="/Post/PostBySubCategory/@sub.SubCategoryId">@sub.SubCategoryName</a></li>
                                                                     }
                                                                 }
                                                                 

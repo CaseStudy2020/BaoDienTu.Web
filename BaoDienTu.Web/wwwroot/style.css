@@ -2253,9 +2253,10 @@ article footer .btn-primary:focus {
   margin-top: -2px;
 }
 
-.menu ul > li.active a:after, .menu ul > li:hover > a:after {
-  width: 100%;
-}
+    .menu ul > li.active a:after, .menu ul > li:hover > a:after {
+        width: 100%;
+        background-color: #F73F52;
+    }
 
 .menu ul > li:hover > .dropdown-menu {
   visibility: visible;

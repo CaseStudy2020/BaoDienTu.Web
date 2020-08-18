@@ -24,8 +24,8 @@
                             <div class="single-baner-nw mb-30 text-center">
                                 <div class="banner-img-cap">
                                     <div class="banner-img">
-                                        <img src="@fastpost.Thumbnail" style="width:231px;height:250px" alt="thumbnail">
-                                        <a asp-controller="Post" asp-action="PostDetail" asp-route-id="@fastpost.PostId"></a>
+                                        <a asp-controller="Post" asp-action="PostDetail" asp-route-id="@fastpost.PostId"><img src="@fastpost.Thumbnail" style="width:231px;height:250px" alt="thumbnail">
+                                        </a>
                                     </div>
                                     <div class="banner-cap">
                                         <p>@fastpost.DateCreated - <i class="fas fa-comment"></i> @fastpost.NumberOfComment</p>
@@ -376,12 +376,14 @@
                                                 <div class="single-baner-nw2 mb-30">
                                                     <div class="banner-img-cap2">
                                                         <div class="banner-img">
-                                                            <img src="@post.Thumbnail" alt="">
+                                                            <a href="Post/PostDetail/@post.PostId"><img src="@post.Thumbnail" alt=""></a>
                                                         </div>
                                                         <div class="banner-cap2">
-                                                            <p>@post.Title</p>
-                                                            <h3><a href="post_details.html">The pomelo case: scope of plant rights in China</a></h3>
-                                                            <p class="blog-text" style="text-transform: normal !important;">Indie folks start out by making something they want to read, that tell stories they want told..</p>
+                                                            <h3><a asp-controller="Post" asp-action="PostDetail" asp-route-id="@post.PostId">@post.Title</a></h3>
+                                                            <span>@post.DateCreated - <i class="far fa-eye"></i> @post.View</span>
+                                                            <p class="blog-text" style="text-transform: normal !important;">@post.ShortContent2..</p>
+                                                            <a href="Post/PostDetail/@post.PostId" style="color:blue">Read more <i class="far fa-arrow-alt-circle-right"></i></a>
+                                                            <p><span><i class="far fa-thumbs-up"></i>@post.Like - <i class="fas fa-comment"></i> @post.NumberOfComment</span></p>
                                                         </div>
                                                     </div>
                                                 </div>

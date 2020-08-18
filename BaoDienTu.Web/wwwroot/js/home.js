@@ -13,17 +13,17 @@ home.GetTop5 = function () {
     })
 };
 categoriId = [];
-home.GetCategoryId = function () {
-    $.ajax({
-        url: `/Home/GetsCategory`,
-        method: "GET",
-        dataType: "json",
+//home.GetCategoryId = function () {
+//    $.ajax({
+//        url: `/Home/GetsCategory`,
+//        method: "GET",
+//        dataType: "json",
 
-        success: function (data) {
-            categoriId = data.categories
-        }
-    })
-};
+//        success: function (data) {
+//            categoriId = data.categories
+//        }
+//    })
+//};
 
 home.getTop1LatestPost = function () {
     $('#Top1LatestPost').empty();
@@ -213,14 +213,14 @@ home.getTop10PostByDay = function () {
 //}
 home.init = function () {
     //home.getAllCategory();
-    home.GetCategoryId();
+    //home.GetCategoryId();
     home.GetTop5();
     setInterval(home.getTop1LatestPost, 1000);
     setInterval(home.getTop2LatestPost, 1000);
     setInterval(home.getTop3LatestPost, 1000);
     home.getTop10PostByDay();
-    home.getByCategory();
-    home.drawpostofcategory();
+    //home.getByCategory();
+    //home.drawpostofcategory();
 
     
 

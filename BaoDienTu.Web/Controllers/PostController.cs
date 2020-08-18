@@ -1,4 +1,6 @@
-﻿using BaoDienTu.Web.Models.Post;
+﻿using BaoDienTu.Web.Models.Catagory;
+using BaoDienTu.Web.Models.Post;
+using BaoDienTu.Web.Models.SubCategory;
 using BaoDienTu.Web.Ultilities;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -55,6 +57,20 @@ namespace BaoDienTu.Web.Controllers
         [HttpGet]
         public IActionResult PostByCategory(int categoryId)
         {
+            var categories = new List<Category>();
+            categories = ApiHelper<List<Category>>.HttpGetAsync($"{Helper.ApiUrl}api/category/gets");
+            ViewBag.Categories = categories;
+
+            List<ListSubByCategoryId> listSub = new List<ListSubByCategoryId>();
+            for (int i = 0; i < categories.Count; i++)
+            {
+                ListSubByCategoryId listsub = new ListSubByCategoryId();
+                listsub.allSub = GetSubByCategoryId2(categories[i].CategoryId);
+                listSub.Add(listsub);
+            }
+            ViewBag.ListSubByCategoryId = listSub;
+
+
             var postByCateId = new List<PostByCategoryId>();
             postByCateId = ApiHelper<List<PostByCategoryId>>.HttpGetAsync($"{Helper.ApiUrl}api/post/getByCategoryId/{categoryId}");
             return View(postByCateId);
@@ -63,6 +79,20 @@ namespace BaoDienTu.Web.Controllers
         
         public IActionResult PostBySubCategory(int subCategoryId)
         {
+            var categories = new List<Category>();
+            categories = ApiHelper<List<Category>>.HttpGetAsync($"{Helper.ApiUrl}api/category/gets");
+            ViewBag.Categories = categories;
+
+            List<ListSubByCategoryId> listSub = new List<ListSubByCategoryId>();
+            for (int i = 0; i < categories.Count; i++)
+            {
+                ListSubByCategoryId listsub = new ListSubByCategoryId();
+                listsub.allSub = GetSubByCategoryId2(categories[i].CategoryId);
+                listSub.Add(listsub);
+            }
+            ViewBag.ListSubByCategoryId = listSub;
+
+
             var postBySubId = new List<PostBySubCategoryId>();
             postBySubId = ApiHelper<List<PostBySubCategoryId>>.HttpGetAsync($"{Helper.ApiUrl}api/post/getBySubCategoryId/{subCategoryId}");
             return View(postBySubId);
@@ -71,10 +101,38 @@ namespace BaoDienTu.Web.Controllers
         
         public IActionResult PostDetail(int id)
         {
+            var categories = new List<Category>();
+            categories = ApiHelper<List<Category>>.HttpGetAsync($"{Helper.ApiUrl}api/category/gets");
+            ViewBag.Categories = categories;
+
+            List<ListSubByCategoryId> listSub = new List<ListSubByCategoryId>();
+            for (int i = 0; i < categories.Count; i++)
+            {
+                ListSubByCategoryId listsub = new ListSubByCategoryId();
+                listsub.allSub = GetSubByCategoryId2(categories[i].CategoryId);
+                listSub.Add(listsub);
+            }
+            ViewBag.ListSubByCategoryId = listSub;
+
             var postById = new PostView();
             postById = ApiHelper<PostView>.HttpGetAsync($"{Helper.ApiUrl}api/post/get/{id}");           
             return View(postById);
 
+        }
+
+
+        public List<SubCategory> GetSubByCategoryId2(int categoryId)
+        {
+            var subs = new List<SubCategory>();
+            subs = ApiHelper<List<SubCategory>>.HttpGetAsync($"{Helper.ApiUrl}api/subcategory/getsubbycategoryid/{categoryId}");
+            return subs;
+        }
+        [Route("/Home/GetsCategory")]
+        public JsonResult GetsCategory()
+        {
+            var categories = new List<CategoryView>();
+            categories = ApiHelper<List<CategoryView>>.HttpGetAsync($"{Helper.ApiUrl}api/category/gets");
+            return Json(new { categories });
         }
     }
 }
