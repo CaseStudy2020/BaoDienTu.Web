@@ -2,7 +2,7 @@
 var id = 0;
 sub.drawTable = function () {
     $.ajax({
-        url: `/SubCategory/GetPostByCategoryId/${id}`,
+        url: `/SubCategory/GetSubByCategoryId/${id}`,
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -14,7 +14,7 @@ sub.drawTable = function () {
                         <td>${v.subCategoryName}</td>
                          <td>${v.categoryId}</td>
                         <td>
-                          <a href="javascripts:;" onclick="sub.get(${v.subCategoryId})" class=" text-success"><i class="fa fa-edit(alias)"></i></a> 
+                          <a href="javascripts:;" onclick="sub.get(${v.subCategoryId})" class=" text-success"><i class="fa fa-edit"></i></a> 
                             <a href="javascripts:;" onclick="sub.delete(${v.subCategoryId})" class=" text-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>`
@@ -37,10 +37,10 @@ sub.delete = function (id) {
         message: "Do you want to delete this Subcategory.",
         buttons: {
             cancel: {
-                label: '<i class="fa fa-times"></i> No'
+                label: '<i class="fa fa-times "></i> No'
             },
             confirm: {
-                label: '<i class="fa fa-check"></i> Yes'
+                label: '<i class="fa fa-check "></i> Yes'
             }
         },
         callback: function (result) {

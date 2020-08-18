@@ -14,8 +14,8 @@ category.drawTable = function () {
                         <td>${v.categoryName}</td>
                          <td><a href="/SubCategory/Index/${v.categoryId}" title="Sub Category list">${v.soLuong}</a></td>
                         <td>
-                          <a href="javascripts:;" onclick="category.get(${v.categoryId})" class="btn btn-success">Edit</a> 
-                            <a href="javascripts:;" onclick="category.delete(${v.categoryId})" class="btn btn-danger">Delete</a>
+                          <a href="javascripts:;" onclick="category.get(${v.categoryId})" class=" text-success"><i class="fa fa-edit"></i></a> 
+                            <a href="javascripts:;" onclick="category.delete(${v.categoryId})" class=" text-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>`
                 );
