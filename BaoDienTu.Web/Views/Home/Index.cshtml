@@ -21,16 +21,12 @@
                             <div class="single-baner-nw mb-30 text-center">
                                 <div class="banner-img-cap">
                                     <div class="banner-img">
-                                        <img src="@fastpost.Thumbnail" alt="thumbnail">
-                                        <div class="video-icon">
-                                            <a class="popup-video btn-icon"
-                                               href="#"
-                                               data-animation="bounceIn" data-delay=".4s"><i class="fas fa-play"></i></a>
-                                        </div>
+                                        <img src="@fastpost.Thumbnail" style="width:231px;height:250px" alt="thumbnail">
+                                        <a asp-controller="Post" asp-action="PostDetail" asp-route-id="@fastpost.PostId"></a>
                                     </div>
                                     <div class="banner-cap">
                                         <p>@fastpost.DateCreated - <i class="fas fa-comment"></i> @fastpost.NumberOfComment</p>
-                                        <h3><a href="#">@fastpost.Title</a></h3>
+                                        <h3><a asp-controller="Post" asp-action="PostDetail" asp-route-id="@fastpost.PostId">@fastpost.Title</a></h3>
                                     </div>
                                 </div>
                             </div>
