@@ -15,7 +15,7 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <h1>WritePost</h1>
 
-<h4>CreatePostViewModel</h4>
+<h4>Write new Post</h4>
 <hr />
 
 
@@ -23,27 +23,37 @@
 
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="form-group">
             <label asp-for="Thumbnail" class="control-label"></label>
             <input asp-for="Thumbnail" class="form-control" id="thumbnail" type="file" />
             <span asp-validation-for="Thumbnail" class="text-danger"></span>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="form-group">
             <label asp-for="AuthorId" class="control-label"></label>
             <input asp-for="AuthorId" class="form-control" id="authorId" />
             <span asp-validation-for="AuthorId" class="text-danger"></span>
         </div>
     </div>
-    <div class="col-md-4">
+
+    <div class="col-md-3">
         <div class="form-group">
-            <label asp-for="SubCategoryId" class="control-label"></label>
-            <input asp-for="SubCategoryId" class="form-control" id="subCategoryId" />
-            <span asp-validation-for="SubCategoryId" class="text-danger"></span>
+            <select id="category">
+            </select>
+        </div>
+
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+
+            <select id="subCategory">
+                <option selected disabled>Choose Sub Category</option>
+            </select>
         </div>
     </div>
+
 
 
 
@@ -60,7 +70,7 @@
     <script>
         //CKEDITOR.replace('content');
         $('#content').summernote({
-            placeholder: 'Hello Bootstrap 4',
+            placeholder: '',
             tabsize: 2,
             height: 100
         });
