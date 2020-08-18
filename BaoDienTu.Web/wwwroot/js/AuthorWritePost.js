@@ -34,7 +34,7 @@ function encodeImageFileAsURL(element) {
         imagebase64 = reader.result;
     }
     reader.readAsDataURL(file);
-}  
+}
 WritePostObject.getData = function () {
     
     WritePostObject.link = "";

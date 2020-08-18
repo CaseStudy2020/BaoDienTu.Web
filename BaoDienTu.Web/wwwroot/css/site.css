@@ -5359,8 +5359,7 @@ form.search-box .search-form a {
 /* line 92, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_comments.scss */
 input {
   border: 1px solid #eaeaea;
-  height: 50px;
-  width: 100%;
+  width: 85%;
   padding: 10px 25px;
   padding-right: 30px;
   color: #a3a3a3;

@@ -9,6 +9,7 @@ using BaoDienTu.Web.Models;
 using BaoDienTu.Web.Models.Post;
 using BaoDienTu.Web.Ultilities;
 using BaoDienTu.Web.Models.Catagory;
+using BaoDienTu.Web.Models.SearchContent;
 
 namespace BaoDienTu.Web.Controllers
 {
@@ -63,7 +64,7 @@ namespace BaoDienTu.Web.Controllers
         }
 
         [Route("/Home/GetsCategory")]
-        public JsonResult GetsCategory()
+        public IActionResult GetsCategory()
         {
             var categories = new List<CategoryView>();
             categories = ApiHelper<List<CategoryView>>.HttpGetAsync($"{Helper.ApiUrl}api/category/gets");
@@ -98,5 +99,74 @@ namespace BaoDienTu.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [Route("Home/Search")]           
+        public IActionResult Search(string moviename)
+        {
+            var post = new List<SearchPost>();
+            post = ApiHelper<List<SearchPost>>.HttpGetAsync($"{Helper.ApiUrl}api/post/search/{moviename}");
+            var searchresult = new List<SearchPost>();        
+            if (post != null)
+            {
+                ViewBag.Ten = post;
+                ViewBag.Keyword = moviename;
+
+                foreach (var item in post)
+                {
+                    if (item.Title.ToLower().Contains(moviename))
+                    {
+                        searchresult.Add(item);                  
+                    }
+                }
+                return View(searchresult);
+            }
+            return View("~/Home/Index");
+
+        }
+
+        [Route("Home/SearchContent")]
+        public IActionResult SearchContent(string moviename)
+        {
+            var post = new List<SearchContent>();
+            post = ApiHelper<List<SearchContent>>.HttpGetAsync($"{Helper.ApiUrl}api/post/searchcontent/{moviename}");
+            var searchresult = new List<SearchContent>();
+            if (post != null)
+            {
+                ViewBag.Key = moviename;             
+                foreach (var item in post)
+                {
+                    if (item.Title.ToLower().Contains(moviename))
+                    {
+                        searchresult.Add(item);
+                    }
+                }
+                return View(searchresult);
+            }
+            return View("~/Home/Index");
+        }
+
+        [Route("Home/SearchDate")]
+        public IActionResult SearchDate(string moviename)
+        {
+            var post = new List<SearchDate>();
+            post = ApiHelper<List<SearchDate>>.HttpGetAsync($"{Helper.ApiUrl}api/post/searchdate/{moviename}");
+            var searchresult = new List<SearchDate>();
+            if (post != null)
+            {
+                ViewBag.Date = moviename;
+               
+                foreach (var item in post)
+                {
+                    if (item.Title.ToLower().Contains(moviename))
+                    {
+                        searchresult.Add(item);
+                    }
+                }
+                return View(searchresult);
+            }
+            return View("~/Home/Index");
+        }
+
     }
+
 }
