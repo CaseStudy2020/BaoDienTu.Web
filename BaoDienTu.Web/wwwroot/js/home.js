@@ -65,7 +65,7 @@ home.getTop2LatestPost = function () {
                                     <div class="single-baner-nw2 mb-30">
                                         <div class="banner-img-cap2">
                                             <div class="banner-cap2 banner-cap3">
-                                                <p>${top5[i].title}</p>
+                                               
                                                 <h3><a href="Post/PostDetail/${top5[i].postId}">${top5[i].title}</a></h3>
                                                 <p class="normal">${top5[i].shortContent2}...</p>
                                             </div>
@@ -88,7 +88,7 @@ home.getTop3LatestPost = function () {
                                        <a href="Post/PostDetail/${top5[i].postId}"><img src="${top5[i].thumbnail}" alt="">
                                     </div>
                                     <div class="banner-cap2">
-                                        <p>${top5[i].title}</p>
+                                         <h3><a href="Post/PostDetail/${top5[i].postId}">${top5[i].title}</a></h3>
                                         <h3><a href="Post/PostDetail/${top5[i].postId}">${top5[i].shortContent2}...</a></h3>
                                     </div>
                                 </div>

@@ -2,7 +2,7 @@
     $.ajax({
         type: "POST",
         url: `author/SavePost`,
-        contentType : "application/json",
+        contentType: "application/json",
         data: JSON.stringify(dataModel),
         dataType: "json",
         success: function (response) {
@@ -15,7 +15,7 @@
 var WritePostObject = {} || WritePostObject;
 WritePostObject.getData = function () {
 
-    
+
     WritePostObject.AuthorId = $("#authorId").val();
 
     WritePostObject.Thumbnail = imagebase64;
@@ -23,13 +23,13 @@ WritePostObject.getData = function () {
 
     WritePostObject.Title = $("#title").val();
     WritePostObject.Content = $('#content').val();
-    WritePostObject.SubCategoryId = parseInt( $('#subCategory').val());
+    WritePostObject.SubCategoryId = parseInt($('#subCategory').val());
 }
 
 $("#WritePost").click(function (e) {
     e.preventDefault();
     WritePostObject.getData();
-    ajaxPost( WritePostObject);
+    ajaxPost(WritePostObject);
 });
 $("#thumbnail").change(function (e) {
     e.preventDefault();
@@ -44,15 +44,7 @@ function encodeImageFileAsURL(element) {
         imagebase64 = reader.result;
     }
     reader.readAsDataURL(file);
-<<<<<<< HEAD
-}  
-=======
 }
-WritePostObject.getData = function () {
-    
-    WritePostObject.link = "";
-    WritePostObject.authorId = $("#authorId").val();
->>>>>>> origin/Dev-Cuong
 
 
 //get list category when page is completed load
@@ -63,9 +55,9 @@ GetListCategory = function () {
         dataType: "json",
         success: function (response) {
             var s = '<option value="Select category" selected disabled>Choose Category</option>'
-            $('#category').append(s);   
+            $('#category').append(s);
             $.each(response.listCategory, function (i, v) {
-                $('#category').append($('<option></option>').val(i+1).text(v.categoryName));
+                $('#category').append($('<option></option>').val(i + 1).text(v.categoryName));
             });
         }
     });
@@ -83,7 +75,7 @@ GetListSubCategory = function () {
         success: function (response) {
             $('#subCategory').empty();
             $.each(response.listSubCategory, function (i, v) {
-                $('#subCategory').append($('<option></option>').val(i+1).text(v.subCategoryName));
+                $('#subCategory').append($('<option></option>').val(i + 1).text(v.subCategoryName));
 
             });
         }
