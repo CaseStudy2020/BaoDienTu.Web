@@ -248,8 +248,8 @@ figure {
 //
 
 img {
-  vertical-align: middle;
   border-style: none; // Remove the border on images inside links in IE 10-.
+  margin-bottom:3px;
 }
 
 svg {

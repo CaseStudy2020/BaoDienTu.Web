@@ -44,7 +44,15 @@ function encodeImageFileAsURL(element) {
         imagebase64 = reader.result;
     }
     reader.readAsDataURL(file);
+<<<<<<< HEAD
 }  
+=======
+}
+WritePostObject.getData = function () {
+    
+    WritePostObject.link = "";
+    WritePostObject.authorId = $("#authorId").val();
+>>>>>>> origin/Dev-Cuong
 
 
 //get list category when page is completed load

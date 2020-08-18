@@ -1,0 +1,140 @@
+﻿.lisman {
+    color: #009cd7;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: block;
+    background: #f7f7f7;
+    padding: 10px 10px 8px;
+    border-top: 1px solid #eee
+}
+
+.text {
+    font-size: 20px;
+    font-size: 1.4rem;
+    color: black;
+    text-transform: none;
+}
+
+.time {
+    padding: 8px 10px;
+    font-weight: normal;
+    color: #666;
+}
+
+.all {
+    color: #000;
+    text-decoration: underline;
+}
+
+.search--input {
+    background: #f7f7f7;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.search-form .form-control {
+    height: 50px;
+    padding-right: 910px;
+}
+
+form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.options {
+    float: right;
+}
+
+.zone--timeline .story {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+}
+
+.search--result__heading .option .form-control {
+    font-weight: 500;
+    width: 125px;
+    height: auto;
+    padding: 3px 0;
+    display: inline;
+    background: #f7f7f7;
+    -webkit-border-radius: 1px;
+}
+
+.search--result__heading {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.zone--timeline .story {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+}
+
+.story {
+    position: relative;
+}
+
+    .story::after {
+        clear: both;
+    }
+
+.pag {
+    border-top: 1px solid #eee;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pagination li a, .pagination li span {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 18px;
+    line-height: 1.8rem;
+    color: #999;
+    padding: 2px 8px;
+    border: 1px solid #999 !important;
+    margin-right: 5px;
+}
+
+.in {
+    /*border: 1px solid #eaeaea;*/
+    width: 15%;
+    padding: 10px 25px;
+    padding-right: 30px;
+    color: #a3a3a3;
+    font-weight: 500;
+    text-transform: capitalize;
+    /*border-radius: 0px;*/
+}
+
+.search-form .btn, .search-form a.btn {
+    background: 0 0;
+    border: 0;
+    position: absolute;
+    bottom: 10px;
+    right: 18px;
+    outline: 0;
+    padding: 0;
+    box-shadow: none;
+}
+.card-img {
+   width:157px;
+   height:167px;
+}

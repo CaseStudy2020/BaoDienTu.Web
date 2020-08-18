@@ -1,0 +1,180 @@
+﻿@model List<BaoDienTu.Web.Models.SearchPost>
+
+@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="full-content border">
+    <div class="search--input">
+        <div class="search-form">
+            <form class="form-inline active-purple-4" asp-controller="Home" asp-action="Search" method="post">
+                <input type="text" name="moviename" class="form-control" value="@ViewBag.Keyword" placeholder="Từ khóa tìm kiếm" id="moviename">
+                <button type="submit" @*id="submit"*@><i class="fa fa-search" aria-hidden="true" style="height:40px; width:auto;padding-top:5px"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 border p-4">
+
+                <!-- Filter panel -->
+                <div class="mb-5">
+                    <h3 class="font-weight-bold mb-3">Tìm kiếm theo</h3>
+
+                    <div class="divider-small mb-3"></div>
+
+                    <ul class="list-unstyled link-black" id="input">
+                        <li class="text"><a a class="in" href="~/Home/Search/?moviename=@ViewBag.Keyword"><label class="text-primary">Tiêu đề</label></a></li>
+                        <li class="text"><a class="in" href="~/Home/SearchContent/?moviename=@ViewBag.Keyword"><label class="text">Nội dung</label></a></li>
+                        <li class="text"><a class="in" href=""><label class="text">Tác giả</label></a></li>
+                    </ul>
+                </div>
+                <!-- Filter panel -->
+                <!-- Filter panel -->
+                <div class="mb-5">
+                    <div class="search--filter__opt">
+                        <h3 class="font-weight-bold mb-3">Lọc bài viết theo</h3>
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li class="lisman"><span>Thời gian</span></li>
+                                    <li class="time"><a href="#" class="all">Tất cả</a></li>
+                                    <li class="time"><a class="time" href="~/Home/SearchDate/?moviename=@ViewBag.Keyword">1 ngày qua</a></li>
+                                    <li class="time"><a class="time">1 tuần qua</a></li>
+                                    <li class="time"><a class="time" href="#">1 tháng qua</a></li>
+                                    <li class="timel"><a class="time" href="#">1 năm qua</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li class="lisman"><span>Chuyên mục</span></li>
+                                    <li class="time"><a href="#" class="all">Tất cả <span></span></a></li>
+                                    <li class="time"> <a i class="time">Công nghệ <span></span></a></li>
+                                    <li class="time"><a i class="time">Thời sự <span></span></a></li>
+                                    <li class="time"><a>Tài chính - Kinh doanh <span></span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li class="lisman"><span>Thể loại</span></li>
+                                    <li class="time"><a href="#" class="all">Tất cả</a></li>
+                                    <li class="time"><a>Bài viết</a></li>
+                                    <li class="time"><a>Ảnh</a></li>
+                                    <li class="time"><a>Video</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    @*<div class="link-black mt-3">
+
+                            <h5 class="font-weight-bold mb-3">Rating</h5>
+
+                            <div class="divider-small mb-3"></div>
+
+                            <div class="amber-text fa-sm mb-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <a href="" class="ml-2 active">4 and more</a>
+                            </div>
+
+                            <div class="amber-text fa-sm mb-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <a href="" class="ml-2">3 - 3,99</a>
+                            </div>
+
+                            <div class="amber-text fa-sm mb-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <a href="" class="ml-2">3.00 and less</a>
+                            </div>
+
+                        </div>*@
+                    <!-- Filter panel -->
+
+                </div>
+
+            </div>
+            <!--Grid column-->
+            @*</div>*@
+            <div class="col-lg-9 col-md-9 ol-sm-12 col-xs-12">
+                <div class="search--result">
+                    <div class="search--result__heading">
+
+                        <h4>Tìm thấy<span></span> kết quả về <b></b></h4>
+
+
+                        @*<div class="options">
+                                <span>Sắp xếp theo</span>
+                                <select class="">
+                                    <option value="latest">Mới nhất</option>
+                                    <option value="" selected="selected">Liên quan</option>
+                                </select>
+                            </div>*@
+                    </div>
+                    <div class="zone--timeline">
+                        <div id="result" class="relative">
+                            @foreach (var iteam in Model)
+                            {
+                                <div class="card mb-3">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="@Url.Content(iteam.Thumbnail)" class="card-img" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">@iteam.Title</h5>
+                                                <p class="card-text"><small class="text-muted">@iteam.DateCreated</small></p>
+                                                <p class="card-text">@iteam.Content</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <div id="result"></div>
+                            <nav class="justify-content-center mt-10">
+                                <ul class="pagination">
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li class=""><a href="#">2</a></li>
+                                    <li class=""><a href="/tin-tuc/tim-kiem/aA==/h-trang-3.html">3</a></li>
+                                    <li class=""><a href="/tin-tuc/tim-kiem/aA==/h-trang-4.html">4</a></li>
+                                    <li class=""><a href="/tin-tuc/tim-kiem/aA==/h-trang-5.html">5</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- end search--result -->
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+
+
+@*<script>
+    function myFunction() {
+        var theChoice = document.getElementById("#input")
+   
+        switch (theChoice.value) {
+            case '0':
+               
+                break;
+            case '1':
+                console.log("Helo")
+                window.location = "~/Home/SearchContent/?moviename=@ViewBag.Keyword";
+                break;
+        }
+</script>*@
+@*<script src="~/js/search.js"></script>*@

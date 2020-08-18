@@ -10,7 +10,7 @@ namespace BaoDienTu.Web.Ultilities
         public static T HttpGetAsync(string apiUrl, string method = "GET")
         {
             HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(apiUrl);
-            httpWebRequest.Method = method;
+            httpWebRequest.Method = method;      
             var response = httpWebRequest.GetResponse();
             {
                 string responseData;

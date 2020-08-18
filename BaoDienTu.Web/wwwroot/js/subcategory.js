@@ -80,13 +80,12 @@ sub.reset = function () {
     $('#SubCategoryId').val(0);
     $('#Category').val("0");
 }
-var a; 
+
 sub.save = function () {
     if ($('#SubCategoryId').val() == '0') {
         var saveObj = {};
         saveObj.SubcategoryName = $('#SubCategoryName').val();
-        saveObj.categoryId = parseInt($('#Category').val());
-       a = saveObj;
+        saveObj.categoryId = parseInt($('#Category').val());     
         $.ajax({
             url: `/SubCategory/Create/`,
             method: "POST",
