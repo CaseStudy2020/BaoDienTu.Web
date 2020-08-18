@@ -71,10 +71,17 @@ namespace BaoDienTu.Web.Controllers
         [Route("/Home/GetsTop5LastestPost")]
         public JsonResult GetsTop5LastestPost()
         {
-            var lastestpost = new List<Top5LastestPost>();
-            lastestpost = ApiHelper<List<Top5LastestPost>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetsTop5LastestPost");
+            List<Top5LastestPost> lastestpost = GetTop5LastestPost();
             return Json(new { lastestpost });
         }
+
+        private List<Top5LastestPost> GetTop5LastestPost()
+        {
+            var lastestpost = new List<Top5LastestPost>();
+            lastestpost = ApiHelper<List<Top5LastestPost>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetsTop5LastestPost");
+            return lastestpost;
+        }
+
         [Route("/Home/getByCategoryId/{categoryId}")]
         public JsonResult GetPostByCategoryId(int categoryId)
         {
@@ -102,6 +109,7 @@ namespace BaoDienTu.Web.Controllers
             result = ApiHelper<PostView>.HttpGetAsync(
                                                     $"{Helper.ApiUrl}api/post/get/{id}"
                                                 );
+
             return Json(new { result });
         }
 

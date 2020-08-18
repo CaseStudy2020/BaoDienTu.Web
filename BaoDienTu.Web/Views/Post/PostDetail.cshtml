@@ -176,49 +176,66 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" id="top5lastestpost">
+                <div class="row" >
+                    @foreach (var lastestPost in Model.Top5LastestPosts)
+                    {
+                        <div class="col-lg-12 col-md-12">
+                            <div class="single-baner-nw2 mb-30" >
+                                <div class="banner-img-cap2" >
+                                    @*<div class="banner-img">
+                                        <img src="~/@lastestPost.Thumbnail" alt="">
+                                    </div>*@
+                                    <div class="banner-cap2" @*style="background-image:url(@lastestPost.Thumbnail);background-size:cover; background-attachment:fixed"*@>
+                                        <p>@lastestPost.DateCreated - <i class="fas fa-comment"></i> @lastestPost.NumberOfComment</p>
+                                        <a asp-controller="Post" asp-action="PostDetail" asp-route-id="@lastestPost.PostId">@lastestPost.Title</a>
+                                        @*<p class="blog-text" style="text-transform: normal !important;">@Html.Raw(lastestPost.ShortContent)</p>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
                     @*<div class="col-lg-4 col-md-6">
-                        <div class="single-baner-nw2 mb-30">
-                            <div class="banner-img-cap2">
-                                <div class="banner-img">
-                                    <img src="~/lib/img/gallery/trend1.png" alt="">
-                                </div>
-                                <div class="banner-cap2">
-                                    <p>Technology</p>
-                                    <h3><a href="post_details.html">The pomelo case: scope of plant rights in China</a></h3>
-                                    <p class="blog-text" style="text-transform: normal !important;">Indie folks start out by making something they want to read, that tell stories they want told..</p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="single-baner-nw2 mb-30">
+                <div class="banner-img-cap2">
+                    <div class="banner-img">
+                        <img src="~/lib/img/gallery/trend1.png" alt="">
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-baner-nw2 mb-30">
-                            <div class="banner-img-cap2">
-                                <div class="banner-img">
-                                    <img src="~/lib/img/gallery/trend2.png" alt="">
-                                </div>
-                                <div class="banner-cap2">
-                                    <p>Technology</p>
-                                    <h3><a href="post_details.html">The pomelo case: scope of plant rights in China</a></h3>
-                                    <p class="blog-text" style="text-transform: normal !important;">Indie folks start out by making something they want to read, that tell stories they want told..</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="banner-cap2">
+                        <p>Technology</p>
+                        <h3><a href="post_details.html">The pomelo case: scope of plant rights in China</a></h3>
+                        <p class="blog-text" style="text-transform: normal !important;">Indie folks start out by making something they want to read, that tell stories they want told..</p>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-baner-nw2 mb-30">
-                            <div class="banner-img-cap2">
-                                <div class="banner-img">
-                                    <img src="~/lib/img/gallery/trend3.png" alt="">
-                                </div>
-                                <div class="banner-cap2">
-                                    <p>Technology</p>
-                                    <h3><a href="post_details.html">The pomelo case: scope of plant rights in China</a></h3>
-                                    <p class="blog-text" style="text-transform: normal !;">Indie folks start out by making something they want to read, that tell stories they want told..</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>*@
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="single-baner-nw2 mb-30">
+                <div class="banner-img-cap2">
+                    <div class="banner-img">
+                        <img src="~/lib/img/gallery/trend2.png" alt="">
+                    </div>
+                    <div class="banner-cap2">
+                        <p>Technology</p>
+                        <h3><a href="post_details.html">The pomelo case: scope of plant rights in China</a></h3>
+                        <p class="blog-text" style="text-transform: normal !important;">Indie folks start out by making something they want to read, that tell stories they want told..</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="single-baner-nw2 mb-30">
+                <div class="banner-img-cap2">
+                    <div class="banner-img">
+                        <img src="~/lib/img/gallery/trend3.png" alt="">
+                    </div>
+                    <div class="banner-cap2">
+                        <p>Technology</p>
+                        <h3><a href="post_details.html">The pomelo case: scope of plant rights in China</a></h3>
+                        <p class="blog-text" style="text-transform: normal !;">Indie folks start out by making something they want to read, that tell stories they want told..</p>
+                    </div>
+                </div>
+            </div>
+        </div>*@
                 </div>
             </div>
         </div>
@@ -251,6 +268,6 @@
         <!-- Want To work End -->
     </main>
 
-@section Scripts{
+@*@section Scripts{
     <script src="~/js/post.js" asp-append-version="true"></script>
-}
+}*@

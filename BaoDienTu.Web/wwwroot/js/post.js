@@ -1,13 +1,13 @@
-﻿var post = {} || post;
+﻿var posts = {} || posts;
 
-post.getsTop5LastestPost = function () {
+posts.getsTop5LastestPost = function () {
     $.ajax({
-        url: `/Home/GetsTop5LastestPost`,
+        url: '/Home/GetsTop5LastestPost',
         method: "GET",
         dataType: "json",
         success: function (data) {
             $('#top5lastestpost').empty();
-            $.each(data.top5lastestpost, function (i, v) {
+            $.each(data.lastestpost, function (i, v) {
                 $('#top5lastestpost').append(
                     `
                         <div class="col-lg-4 col-md-6">
@@ -32,9 +32,9 @@ post.getsTop5LastestPost = function () {
 }
 
 
-post.init = function () {
-    post.getsTop5LastestPost;
+posts.init = function () {
+    posts.getsTop5LastestPost;
 };
 $(document).ready(function () {
-    post.init();
+    posts.init();
 });

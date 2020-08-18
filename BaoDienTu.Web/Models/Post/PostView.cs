@@ -24,5 +24,6 @@ namespace BaoDienTu.Web.Models.Post
         public int CategoryId { get; set; }
         public string Thumbnail { get; set; }
         public int NumberOfComment { get; set; }
+        public List<Top5LastestPost> Top5LastestPosts { get; set; }
     }
 }

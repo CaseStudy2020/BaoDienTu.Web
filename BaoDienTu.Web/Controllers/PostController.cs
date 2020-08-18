@@ -115,7 +115,12 @@ namespace BaoDienTu.Web.Controllers
             ViewBag.ListSubByCategoryId = listSub;
 
             var postById = new PostView();
-            postById = ApiHelper<PostView>.HttpGetAsync($"{Helper.ApiUrl}api/post/get/{id}");           
+            postById = ApiHelper<PostView>.HttpGetAsync($"{Helper.ApiUrl}api/post/get/{id}");
+
+            var lastestpost = new List<Top5LastestPost>();
+            lastestpost = ApiHelper<List<Top5LastestPost>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetsTop5LastestPost");
+            postById.Top5LastestPosts = lastestpost;
+
             return View(postById);
 
         }
