@@ -100,40 +100,38 @@ home.getTop3LatestPost = function () {
 
 
 
-//home.getByCategory = function () {
-//    $.ajax({
-//        url: `/Home/GetsCategory/`,
-//        method: "GET",
-//        dataType: "json",
-//        success: function (data) {
-//            $('#PostByCateId').empty();
-//            $.each(data.categories, function (i, v) {
-//                $('#PostByCateId').append(
-//                    `
-//            <div class="latest-posts pt-80 pb-80" style="background-color:#EFF5F8">
-//                <div class="container">
-//                    <div class="row">
-//                        <div class="col-12">
-//                            <div class="section-tittle mb-35">
-//                                <h2>${v.categoryName}</h2>
-//                            </div>
-//                        </div>
-//                    </div>
-//                    <div class="row" id="post_${v.categoryId}">
+home.getByCategory = function () {
+    $.ajax({
+        url: `/Home/GetsCategory/`,
+        method: "GET",
+        dataType: "json",
+        success: function (data) {
+            $('#PostByCateId').empty();
+            $.each(data.categories, function (i, v) {
+                $('#PostByCateId').append(
+                    `
+            <div class="latest-posts pt-80 pb-80" style="background-color:#EFF5F8">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-tittle mb-35">
+                                <h2>${v.categoryName}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="post_${v.categoryId}">
                  
 
-//                    </div>
-//                </div>
-//            </div>
-//                    `
-//                );
-//                //home.drawpostofcategory(v.categoryId);
-//            });
-//        }
-//    });
-//};
-
-
+                    </div>
+                </div>
+            </div>
+                    `
+                );
+                //home.drawpostofcategory(v.categoryId);
+            });
+        }
+    });
+};
 //home.drawpostofcategory = function (categoryId) {
 //    $.ajax({
 //        url: `/Home/GetsTop3LastestPostByCategoryId/${categoryId}`,

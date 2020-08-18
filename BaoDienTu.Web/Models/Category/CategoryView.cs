@@ -9,6 +9,6 @@ namespace BaoDienTu.Web.Models.Catagory
     {
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
-    
+      
     }
 }

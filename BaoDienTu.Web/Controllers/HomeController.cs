@@ -9,6 +9,7 @@ using BaoDienTu.Web.Models;
 using BaoDienTu.Web.Models.Post;
 using BaoDienTu.Web.Ultilities;
 using BaoDienTu.Web.Models.Catagory;
+using BaoDienTu.Web.Models.SubCategory;
 
 namespace BaoDienTu.Web.Controllers
 {
@@ -25,6 +26,28 @@ namespace BaoDienTu.Web.Controllers
         {
             var fastpost = new List<FastInfoPostView>();
             fastpost = ApiHelper<List<FastInfoPostView>>.HttpGetAsync($"{Helper.ApiUrl}api/post/GetsFastInfoPost");
+            var categories = new List<Category>();
+            categories = ApiHelper<List<Category>>.HttpGetAsync($"{Helper.ApiUrl}api/category/gets");
+            ViewBag.Categories = categories;
+
+            List<ListSubByCategoryId> listSub = new List<ListSubByCategoryId>();
+            for (int i = 0; i < categories.Count; i++)
+            {
+                ListSubByCategoryId listsub = new ListSubByCategoryId();
+                listsub.allSub = GetSubByCategoryId2(categories[i].CategoryId);
+                listSub.Add(listsub);
+            }
+            ViewBag.ListSubByCategoryId = listSub;
+
+
+            List<ListTop3Post> listTop3Post = new List<ListTop3Post>();
+            for(int i = 0; i < categories.Count; i++)
+            {
+                ListTop3Post top3post = new ListTop3Post();
+                top3post.Top3 = GetsTop3PostByCategoryId(categories[i].CategoryId);
+                listTop3Post.Add(top3post);
+            }
+            ViewBag.ListTop3PostByCategoryId = listTop3Post;
             return View(fastpost);
         }
 
@@ -32,7 +55,8 @@ namespace BaoDienTu.Web.Controllers
         public JsonResult Gets()
         {
             var posts = new List<PostView>();
-            posts = ApiHelper<List<PostView>>.HttpGetAsync($"{Helper.ApiUrl}api/post/gets");            
+            posts = ApiHelper<List<PostView>>.HttpGetAsync($"{Helper.ApiUrl}api/post/gets");
+           
             return Json(new { posts });
         }
 
@@ -65,6 +89,12 @@ namespace BaoDienTu.Web.Controllers
             post3ByCateId = ApiHelper<List<Top3LastestPostByCategoryId>>.HttpGetAsync($"{Helper.ApiUrl}api/post/getTop3LastestPostByCategoryId/{categoryId}");
             return Json(new { post3ByCateId });
         }
+        public List<Top3LastestPostByCategoryId> GetsTop3PostByCategoryId(int categoryId)
+        {
+            var post3ByCateId = new List<Top3LastestPostByCategoryId>();
+            post3ByCateId = ApiHelper<List<Top3LastestPostByCategoryId>>.HttpGetAsync($"{Helper.ApiUrl}api/post/getTop3LastestPostByCategoryId/{categoryId}");
+            return post3ByCateId;
+        }
         [Route("/Home/Get/{id}")]
         public JsonResult Get(int id)
         {
@@ -82,6 +112,26 @@ namespace BaoDienTu.Web.Controllers
             categories = ApiHelper<List<CategoryView>>.HttpGetAsync($"{Helper.ApiUrl}api/category/gets");
             return Json(new { categories });
         }
+        [Route("/Home/GetsSubCategory")]
+        public JsonResult GetsSubCategory()
+        {
+            var subcategories = new List<SubCategoryView>();
+            subcategories = ApiHelper<List<SubCategoryView>>.HttpGetAsync($"{Helper.ApiUrl}api/subcategory/gets");
+            return Json(new { subcategories });
+        }
+        public JsonResult GetSubByCategoryId(int categoryId)
+        {
+            var subs = new List<SubCategory>();
+            subs = ApiHelper<List<SubCategory>>.HttpGetAsync($"{Helper.ApiUrl}api/subcategory/getsubbycategoryid/{categoryId}");
+            return Json(new { subs });
+        }
+        public List<SubCategory> GetSubByCategoryId2(int categoryId)
+        {
+            var subs = new List<SubCategory>();
+            subs = ApiHelper<List<SubCategory>>.HttpGetAsync($"{Helper.ApiUrl}api/subcategory/getsubbycategoryid/{categoryId}");
+            return subs;
+        }
+
 
         [Route("/Home/GetTop10MostViewOfDay")]
         public JsonResult GetTop10MostViewOfDay()

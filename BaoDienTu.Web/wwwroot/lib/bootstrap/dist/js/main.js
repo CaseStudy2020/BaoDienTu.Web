@@ -260,23 +260,28 @@
     });
 
 
-    $.ajax({
-        url: `/Home/GetsCategory`,
-        method: "GET",
-        dataType: "json",
-        success: function (data) {
-            $('ul#navigation').empty();
-            $.each(data.categories, function (i, v) {
-                $('ul#navigation').append(
-                    `
+    //$.ajax({
+    //    url: `/Home/GetsCategory`,
+    //    method: "GET",
+    //    dataType: "json",
+    //    success: function (data) {
+    //        $('ul#navigation').empty();
+    //        $.each(data.categories, function (i, v) {
+    //            $('ul#navigation').append(
+    //                `
                   
-                    <li><a href="/Post/PostByCategory/${v.categoryId}">${v.categoryName}</a></li>
+    //                    <li class="dropdown magz-dropdown">
+    //                                            <a href="category.html">${v.categoryName}</a>
+    //                                            <ul class="dropdown-menu">
+    //                                                <li><a href="index.html">Home</a></li>                                                                                                                                                                                                 
+    //                                            </ul>
+    //                                        </li>
                    
-                    `
-                );
-            });
-        }
-    });
+    //                `
+    //            );
+    //        });
+    //    }
+    //});
 
     // <li><a asp-controller="Post" asp-action="PostByCategroy" asp-route-id="${v.categoryId}">${v.categoryName}</a></li>
     $.ajax({

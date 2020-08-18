@@ -1,4 +1,12 @@
-﻿
+﻿@using BaoDienTu.Web.Models.Catagory;
+@using BaoDienTu.Web.Models.SubCategory;
+@model List<FastInfoPostView>
+@{
+    ViewBag.Title = "Youth-Magazine";
+    List<Category> categories = ViewBag.Categories;
+    List<ListSubByCategoryId> listSub = ViewBag.ListSubByCategoryId;
+
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +28,10 @@
     <link href="~/lib/bootstrap/dist/css/slick.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/dist/css/nice-select.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/style.css" rel="stylesheet" />
+    <link href="~/ionicons.css" rel="stylesheet" />
+    
+
 </head>
 <body>
     <!-- ? Preloader Start -->
@@ -28,7 +40,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    
+
                     <img src="~/lib/img/logo/loder.png" alt="">
                 </div>
             </div>
@@ -90,10 +102,45 @@
                                     <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo-mobile.png" alt=""></a>
                                 </div>
                                 <div class="main-menu text-center d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            @*categories*@
-                                        </ul>
+                                    <nav class="menu">
+                                        @*<ul id="navigation">
+
+                                            </ul>*@
+
+
+
+                                        <div id="menu-list">
+                                            <ul class="nav-list" id="navigation">
+
+
+                                                @if (categories != null)
+                                                {
+                                                    for (int i = 0; i < categories.Count; i++)
+                                                    {
+                                                        <li class="dropdown magz-dropdown">
+                                                            <a href="category.html">@categories[i].CategoryName </a>
+                                                            <ul class="dropdown-menu">
+                                                                @if (listSub[i].allSub != null)
+                                                                {
+                                                                    foreach (SubCategory sub in listSub[i].allSub)
+                                                                    {
+                                                                        <li><a href="index.html">@sub.SubCategoryName</a></li>
+                                                                    }
+                                                                }
+                                                                
+                                                            </ul>
+                                                        </li>
+                                                    }
+                                                }
+
+
+
+
+
+                                            </ul>
+                                        </div>
+
+
                                     </nav>
                                 </div>
                             </div>

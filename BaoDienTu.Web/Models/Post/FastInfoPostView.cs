@@ -12,6 +12,8 @@ namespace BaoDienTu.Web.Models.Post
         public string DateCreated { get; set; }
         public int NumberOfComment { get; set; }
         public string Thumbnail { get; set; }
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
 
     }
 }

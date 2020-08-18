@@ -30,10 +30,10 @@ namespace BaoDienTu.Web.Controllers
             }       
             return View();
         }
-        public JsonResult GetPostByCategoryId(int id)
+        public JsonResult GetSubByCategoryId(int id)
         {
             var subs = new List<SubCategory>();
-            subs = ApiHelper<List<SubCategory>>.HttpGetAsync($"{Helper.ApiUrl}api/subcategory/getpostbycategoryId/{id}");
+            subs = ApiHelper<List<SubCategory>>.HttpGetAsync($"{Helper.ApiUrl}api/subcategory/getsubbycategoryId/{id}");
             return Json(new { subs });
         }
 
