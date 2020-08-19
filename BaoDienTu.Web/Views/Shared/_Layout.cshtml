@@ -29,14 +29,11 @@
     <link href="~/lib/bootstrap/dist/css/slick.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/dist/css/nice-select.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
-<<<<<<< HEAD
     <link href="~/style.css" rel="stylesheet" />
     <link href="~/ionicons.css" rel="stylesheet" />
     
 
-=======
     <link href="~/css/search.css" rel="stylesheet" />
->>>>>>> origin/Dev-Cuong
 </head>
 <body>
     <div id="fb-root"></div>
@@ -85,107 +82,87 @@
                                         <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f text-primary"></i></a>
                                         <a href="#"><i class="fab fa-pinterest-p text-primary"></i></a>
                                     </div>
-<<<<<<< HEAD
+
                                     <div class="d-none d-lg-block">
-                                        <div class="form-box f-right ">
-                                            <input type="text" name="Search" placeholder="Search news">
-                                            <div class="search-icon">
-                                                <i class="fas fa-search position-absolute" style="top:45px;right:20px"></i>
-                                            </div>
-=======
-                                    <div class="d-none d-lg-block">                                        
                                         <div class="search-container">
-                                            <form class="form-inline active-pink-3 active-pink-4" asp-controller="Home" asp-action="Search"  method="GET">
-                                                <input type="text" name="moviename" value="" placeholder="Search news"  @*id="moviename"*@>
-                                                <button type="submit" @*id="submit"*@><i class="fa fa-search"  aria-hidden="true" style="height:35px; width:auto"></i></button>
-                                            </form>                                                                              
-                                        </div>
->>>>>>> origin/Dev-Cuong
+                                            <form class="form-inline active-pink-3 active-pink-4" asp-controller="Home" asp-action="Search" method="GET">
+                                                <input type="text" name="moviename" value="" placeholder="Search news" @*id="moviename"*@>
+                                                <button type="submit" @*id="submit"*@><i class="fa fa-search" aria-hidden="true" style="height:35px; width:auto"></i></button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-<<<<<<< HEAD
-                <div class="header-bottom  header-sticky" style="box-shadow: 0 2px 3px rgba(0,0,0,.15);">
-=======
-               </div>
-                <div class="header-bottom  header-sticky">
->>>>>>> origin/Dev-Cuong
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col-12" style="padding-left:0px;padding-right:0px;">
-                                @*<div class="logo2">
+
+                    @*<div class="header-bottom  header-sticky" style="box-shadow: 0 2px 3px rgba(0,0,0,.15);">
+                    </div>*@
+                    <div class="header-bottom  header-sticky">
+                        <div class="container-fluid">
+                            <div class="row align-items-center">
+                                <div class="col-12" style="padding-left:0px;padding-right:0px;">
+                                    @*<div class="logo2">
                                         <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo.png" alt=""></a>
                                     </div>*@
-                                @*<div class="logo3 d-block d-sm-none">
+                                    @*<div class="logo3 d-block d-sm-none">
                                         <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo-mobile.png" alt=""></a>
                                     </div>*@
-                                <div class="main-menu text-center d-none d-lg-block">
-                                    <nav class="menu">
-                                        @*<ul id="navigation">
+                                    <div class="main-menu text-center d-none d-lg-block">
+                                        <nav class="menu">
+                                            @*<ul id="navigation">
 
                                             </ul>*@
 
+                                            <div id="menu-list">
+                                                <ul class="nav-list" id="navigation">
 
 
-                                        <div id="menu-list">
-                                            <ul class="nav-list" id="navigation">
-
-
-                                                @if (categories != null)
-                                                {
-                                                    for (int i = 0; i < categories.Count; i++)
+                                                    @if (categories != null)
                                                     {
-                                                        <li class="dropdown magz-dropdown">
-                                                            <a href="/Post/PostByCategory/@categories[i].CategoryId">@categories[i].CategoryName </a>
-                                                            <ul class="dropdown-menu">
-                                                                @if (listSub[i].allSub != null)
-                                                                {
-                                                                    foreach (SubCategory sub in listSub[i].allSub)
+                                                        for (int i = 0; i < categories.Count; i++)
+                                                        {
+                                                            <li class="dropdown magz-dropdown">
+                                                                <a href="/Post/PostByCategory/@categories[i].CategoryId">@categories[i].CategoryName </a>
+                                                                <ul class="dropdown-menu">
+                                                                    @if (listSub[i].allSub != null)
                                                                     {
-                                                                        <li><a href="/Post/PostBySubCategory/@sub.SubCategoryId">@sub.SubCategoryName</a></li>
+                                                                        foreach (SubCategory sub in listSub[i].allSub)
+                                                                        {
+                                                                            <li><a href="/Post/PostBySubCategory/@sub.SubCategoryId">@sub.SubCategoryName</a></li>
+                                                                        }
                                                                     }
-                                                                }
-                                                                
-                                                            </ul>
-                                                        </li>
+
+                                                                </ul>
+                                                            </li>
+                                                        }
                                                     }
-                                                }
+
+                                                </ul>
+                                            </div>
 
 
-
-
-
-                                            </ul>
-                                        </div>
-
-
-                                    </nav>
+                                        </nav>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
+                                <div class="col-12">
+                                    <div class="mobile_menu d-block d-lg-none"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Header End -->
+        </div>
+        <!-- Header End -->
     </header>
-<<<<<<< HEAD
     <div class="container mt-4">
-=======
-    <div class="container mt-2">
->>>>>>> origin/Dev-Cuong
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-<<<<<<< HEAD
     <footer>
         <div class="footer-area footer-padding" style="background-color:whitesmoke">
             <div class="header-area">
@@ -211,38 +188,11 @@
                                             <li><a asp-controller="About" asp-action="Index" class="text-primary">About</a></li>
                                             <li><a asp-controller="Contact" asp-action="Index" class="text-primary">Contact</a></li>
                                         </ul>
-=======
-    @*<footer>*@
-    <div class="footer-area footer-padding">
-        <div class="header-area">
-            <div class="main-header ">
-                <div class="header-top d-lg-block d-none">
-                    <div class="container">
-                        <div class="col-xl-12">
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="header-info-left d-flex justify-content-center">
-                                    <div class="header-social">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    </div>
-                                </div>
-                                <div class="header-info-mid">
-                                    <div class="logo">
-                                        <a asp-controller="Home" asp-action="Index"><img src="../lib/img/logo/logo.png" alt=""></a>
->>>>>>> origin/Dev-Cuong
-                                    </div>
-                                </div>
-                                <div class="header-info-right d-flex align-items-center">
-                                    <ul>
-                                        <li><a asp-controller="About" asp-action="Index">About</a></li>
-                                        <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
+
                     <div class="header-bottom header-bottom2 ">
                         <div class="container-fluid">
                             @*<div class="row align-items-center">*@
@@ -262,31 +212,7 @@
                                                 Add: <strong>28 - Nguyen Tri Phuong str</strong><br />
                                                 Phone: <strong>0789.999.999</strong><br />
                                                 Mail:<strong>hvnteam@gmail.com</strong>
-                                            </p>
-=======
-                </div>
-                <div class="header-bottom header-bottom2 ">
-                    <div class="container-fluid">
-                        @*<div class="row align-items-center">*@
-                        <div class="col-12">
-                            <div class="main-menu text-center">
-                                <nav>
-                                    <ul class="categoriescus">
-                                        @*categories*@
-                                    </ul>
-                                </nav>
-                                <div class="container">
-                                    <div style=" width: 50%;text-align: left;float: left;">
-                                        <p>
-                                            <strong>Publication License No. 000/GP-BTTTT issued on 00.0.2020</strong><br />
-                                            © 2000-2020 Copyright of HVN team. Reproduction in any form without written permission is prohibited.
-                                            Developed by HVN Technologies, JSC.<br />
-                                            Add: 28 - Nguyen Tri Phuong str.<br />
-                                            Phone: 0789.999.999<br />
-                                            Mail:hvnteam@gmail.com
-                                        </p>
->>>>>>> origin/Dev-Cuong
-
+                                            </p>            
                                     </div>
                                 </div>
                                 <div class="container">
@@ -309,10 +235,12 @@
 
             </div>
         </div>
-<<<<<<< HEAD
+       </div>
+        </div>
+
+
     </footer>
-=======
-    </div>
+
     @*<div class="footer-bottom-area">
                 <div class="container">
                     <div class="footer-border">
@@ -331,7 +259,7 @@
             </div>
         </footer>*@
 
->>>>>>> origin/Dev-Cuong
+
     <!-- Scroll Up -->
     <div id="back-top">
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
@@ -360,14 +288,10 @@
     <script src="~/lib/bootstrap/dist/js/mail-script.js"></script>
     <script src="~/lib/bootstrap/dist/js/jquery.ajaxchimp.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/plugins.js"></script>
-<<<<<<< HEAD
     <script src="~/lib/bootstrap/dist/js/main.js" asp-append-version="true"></script>
     @*<script src="~/js/home.js" asp-append-version="true"></script>*@
-=======
-    <script src="~/lib/bootstrap/dist/js/main.js"></script>
     <script src="~/js/home.js" asp-append-version="true"></script>
     <script src="~/js/search.js" asp-append-version="true"></script>
->>>>>>> origin/Dev-Cuong
     @RenderSection("Scripts", required: false)
 </body>
 </html>

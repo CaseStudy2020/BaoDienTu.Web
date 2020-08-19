@@ -7,7 +7,6 @@
 <h6><a asp-controller="Category" asp-action="Index">@sub.CategoryName</a> &gt; SubCategory of @sub.CategoryName</h6>
 <div class="row">
     <input hidden id="CategoryId" value="@sub.CategoryId" />
-
     <div class="col-12 mb-3 mt-2">
         <a href="javascript:void(0);" class="btn btn-outline-primary" onclick="sub.openAddEditSub()">Create</a>
     </div>
@@ -22,7 +21,7 @@
         </tr>
     </thead>
     <tbody>
-    </tbody>
+    </tbody>    
 </table>
 <div id="addEditSub" class="modal fade" data-backdrop="false" role="dialog">
     <div class="modal-dialog modal-lg">
@@ -55,24 +54,16 @@
                             </div>
                         </div>
                     </div>
-
-<<<<<<< HEAD
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Close</button>
-                        <a href="javascript:;" class="btn btn-outline-primary" onclick="sub.save()">Save</a>
-                    </div>
-=======
->>>>>>> origin/Dev-Cuong
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                    <a href="javascript:;" class="btn btn-danger" onclick="sub.save()">Save</a>
-                </div>
+            </div>                   
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                <a href="javascript:;" class="btn btn-danger" onclick="sub.save()">Save</a>
             </div>
         </form>
+       </div>       
     </div>
-</div>
+
 
 @section Scripts{
     <script src="~/js/subcategory.js" asp-append-version="true"></script>

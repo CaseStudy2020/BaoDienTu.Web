@@ -179,7 +179,7 @@ namespace BaoDienTu.Web.Controllers
             var searchresult = new List<SearchPost>();        
             if (post != null)
             {
-                ViewBag.Ten = post;
+                ViewBag.Count = post.Count();
                 ViewBag.Keyword = moviename;
 
                 foreach (var item in post)
@@ -203,6 +203,7 @@ namespace BaoDienTu.Web.Controllers
             var searchresult = new List<SearchContent>();
             if (post != null)
             {
+                ViewBag.Cao = post.Count();
                 ViewBag.Key = moviename;             
                 foreach (var item in post)
                 {
@@ -225,7 +226,7 @@ namespace BaoDienTu.Web.Controllers
             if (post != null)
             {
                 ViewBag.Date = moviename;
-               
+                ViewBag.Coun = post.Count();
                 foreach (var item in post)
                 {
                     if (item.Title.ToLower().Contains(moviename))
