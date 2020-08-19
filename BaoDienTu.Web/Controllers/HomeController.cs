@@ -172,19 +172,19 @@ namespace BaoDienTu.Web.Controllers
         }
 
         [Route("Home/Search")]           
-        public IActionResult Search(string moviename)
+        public IActionResult Search(string keyword)
         {
             var post = new List<SearchPost>();
-            post = ApiHelper<List<SearchPost>>.HttpGetAsync($"{Helper.ApiUrl}api/post/search/{moviename}");
+            post = ApiHelper<List<SearchPost>>.HttpGetAsync($"{Helper.ApiUrl}api/post/search/{keyword}");
             var searchresult = new List<SearchPost>();        
             if (post != null)
             {
                 ViewBag.Count = post.Count();
-                ViewBag.Keyword = moviename;
+                ViewBag.Keyword = keyword;
 
                 foreach (var item in post)
                 {
-                    if (item.Title.ToLower().Contains(moviename))
+                    if (item.Title.ToLower().Contains(keyword))
                     {
                         searchresult.Add(item);                  
                     }
@@ -196,18 +196,18 @@ namespace BaoDienTu.Web.Controllers
         }
 
         [Route("Home/SearchContent")]
-        public IActionResult SearchContent(string moviename)
+        public IActionResult SearchContent(string keyword)
         {
             var post = new List<SearchContent>();
-            post = ApiHelper<List<SearchContent>>.HttpGetAsync($"{Helper.ApiUrl}api/post/searchcontent/{moviename}");
+            post = ApiHelper<List<SearchContent>>.HttpGetAsync($"{Helper.ApiUrl}api/post/searchcontent/{keyword}");
             var searchresult = new List<SearchContent>();
             if (post != null)
             {
                 ViewBag.Cao = post.Count();
-                ViewBag.Key = moviename;             
+                ViewBag.Key = keyword;             
                 foreach (var item in post)
                 {
-                    if (item.Title.ToLower().Contains(moviename))
+                    if (item.Title.ToLower().Contains(keyword))
                     {
                         searchresult.Add(item);
                     }
@@ -218,18 +218,18 @@ namespace BaoDienTu.Web.Controllers
         }
 
         [Route("Home/SearchDate")]
-        public IActionResult SearchDate(string moviename)
+        public IActionResult SearchDate(string keyword)
         {
             var post = new List<SearchDate>();
-            post = ApiHelper<List<SearchDate>>.HttpGetAsync($"{Helper.ApiUrl}api/post/searchdate/{moviename}");
+            post = ApiHelper<List<SearchDate>>.HttpGetAsync($"{Helper.ApiUrl}api/post/searchdate/{keyword}");
             var searchresult = new List<SearchDate>();
             if (post != null)
             {
-                ViewBag.Date = moviename;
+                ViewBag.Date = keyword;
                 ViewBag.Coun = post.Count();
                 foreach (var item in post)
                 {
-                    if (item.Title.ToLower().Contains(moviename))
+                    if (item.Title.ToLower().Contains(keyword))
                     {
                         searchresult.Add(item);
                     }

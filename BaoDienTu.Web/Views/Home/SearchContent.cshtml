@@ -10,7 +10,7 @@
     <div class="search--input">
         <div class="search-form">             
             <form class="form-inline active-purple-4" asp-controller="Home" asp-action="SearchContent" method="GET">
-                <input type="text" name="moviename" class="form-control" value="@ViewBag.Key" placeholder="Từ khóa tìm kiếm" id="moviename">
+                <input type="text" name="keyword" class="form-control" value="@ViewBag.Key" placeholder="Từ khóa tìm kiếm" id="moviename">
                 <button type="submit" @*id="submit"*@><i class="fa fa-search" aria-hidden="true" style="height:40px; width:auto;padding-top:5px"></i></button>
             </form>              
         </div>
@@ -26,8 +26,8 @@
                     <div class="divider-small mb-3"></div>
 
                     <ul class="list-unstyled link-black">
-                        <li class="text"><a a class="in" href="~/Home/Search/?moviename=@ViewBag.Key"><label class="">Tiêu đề</label></a></li>
-                        <li class="text"><a class="in" href="~/Home/SearchContent/?moviename=@ViewBag.Key"><label class="text-primary">Nội dung</label></a></li>
+                        <li class="text"><a a class="in" href="~/Home/Search/?keyword=@ViewBag.Key"><label class="">Tiêu đề</label></a></li>
+                        <li class="text"><a class="in" href="~/Home/SearchContent/?keyword=@ViewBag.Key"><label class="text-primary">Nội dung</label></a></li>
                         <li class="text"><a class="in" href=""><label class="text">Tác giả</label></a></li>                    
                     </ul>
                 </div>
@@ -41,7 +41,7 @@
                                 <ul>
                                     <li class="lisman"><span>Thời gian</span></li>
                                     <li class="time"><a href="#" class="all">Tất cả</a></li>
-                                    <li class="time"><a class="time" href="~/Home/SearchDate/?moviename=@ViewBag.Key">1 ngày qua</a></li>
+                                    <li class="time"><a class="time" href="~/Home/SearchDate/?keyword=@ViewBag.Key">1 ngày qua</a></li>
                                     <li class="time"><a class="time" href="#">1 tuần qua</a></li>
                                     <li class="time"><a class="time" href="#">1 tháng qua</a></li>
                                     <li class="timel"><a class="time" href="#">1 năm qua</a></li>
@@ -128,13 +128,13 @@
                                 <div class="card mb-3">
                                     <div class="row no-gutters">
                                         <div class="col-md-4">
-                                            <img src="@Url.Content(iteam.Thumbnail)" class="card-img" alt="...">
+                                            <img src="@Html.Raw(iteam.Thumbnail)" class="card-img" alt="...">
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body">
                                                 <h5 class="card-title">@iteam.Title</h5>
                                                 <p class="card-text"><small class="text-muted">@iteam.DateCreated</small></p>
-                                                <p class="card-text">@iteam.Content</p>
+                                                <p class="card-text">@Html.Raw(iteam.Content)</p>
                                             </div>
                                         </div>
                                     </div>
