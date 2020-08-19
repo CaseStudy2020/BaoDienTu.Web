@@ -303,7 +303,7 @@ a:hover,
 /* line 84, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_common.scss */
 a,
 button {
-  color: #fff;
+  /*color: #fff;*/
   outline: medium none;
 }
 

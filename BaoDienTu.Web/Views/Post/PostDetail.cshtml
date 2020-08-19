@@ -186,8 +186,9 @@
                                         <img src="~/@lastestPost.Thumbnail" alt="">
                                     </div>*@
                                     <div class="banner-cap2" @*style="background-image:url(@lastestPost.Thumbnail);background-size:cover; background-attachment:fixed"*@>
-                                        <p>@lastestPost.DateCreated - <i class="fas fa-comment"></i> @lastestPost.NumberOfComment</p>
-                                        <a asp-controller="Post" asp-action="PostDetail" asp-route-id="@lastestPost.PostId">@lastestPost.Title</a>
+                                        @*<a href="Post/PostDetail/@lastestPost.PostId"><span>@lastestPost.Title</span></a>*@
+                                        <p>@lastestPost.DateCreated - <i class="fas fa-comment"></i> @lastestPost.NumberOfComment </p>
+                                        <a style="color:blue" asp-controller="Post" asp-action="PostDetail" asp-route-id="@lastestPost.PostId">@lastestPost.Title</a>
                                         @*<p class="blog-text" style="text-transform: normal !important;">@Html.Raw(lastestPost.ShortContent)</p>*@
                                     </div>
                                 </div>
